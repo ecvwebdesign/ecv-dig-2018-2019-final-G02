@@ -1,23 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   StyleSheet, View, Text,
 } from 'react-native'
-import PropTypes from 'prop-types'
-import i18n from '../../../i18n/i18n'
 import theme from '../../../themes/default'
-import Loader from '../../../commons/components/Loader'
-import Button from '../../../commons/components/Button'
 
-const Home = ({ navigation }) => (
+const Bookmarks = () => (
   <View style={styles.container}>
-    <Text style={styles.title}>Hello</Text>
+    <Text style={styles.title}>Bookmarks</Text>
   </View>
 )
-
-
-Home.propTypes = {
-  navigation: PropTypes.objectOf(PropTypes.shape).isRequired,
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -43,4 +34,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default Home
+export default Bookmarks
