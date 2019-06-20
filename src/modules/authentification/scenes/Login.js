@@ -5,7 +5,6 @@ import {
 import PropTypes from 'prop-types'
 import i18n from '../../../i18n/i18n'
 import theme from '../../../themes/default'
-import Api from '../../../api/api'
 import Loader from '../../../commons/components/Loader'
 import Button from '../../../commons/components/Button'
 
@@ -25,16 +24,17 @@ const Login = ({ navigation }) => {
     setPassword(pass)
   }
 
-  const handleLoginPress = async () => {
-    // TODO handle backend connexion
+  const handleLoginPress = () => {
     setLoading(true)
-    const response = await Api.authLogin(email, password)
-
-    if (response) {
+    setTimeout(() => {
+      // Mocked data to speed up
+      // it's trash, I admit it, don't judge please
+      if (email === 'test@test.com' && password === 'password') {
+        setLoading(false)
+        navigation.navigate('BottomTab')
+      }
       setLoading(false)
-      navigation.navigate('')
-    }
-    setLoading(false)
+    }, 100)
   }
 
   return (
@@ -50,7 +50,7 @@ const Login = ({ navigation }) => {
           placeholder={EMAIL_DEFAULT_PLACEHOLDER}
           keyboardType="email-address"
           maxLength={256}
-          autoFocus
+          autoCapitalize="characters"
         />
         <TextInput
           style={styles.input}
@@ -58,7 +58,7 @@ const Login = ({ navigation }) => {
           placeholder={PASSWORD_DEFAULT_PLACEHOLDER}
           value={password}
           maxLength={256}
-          secureTextEntry
+          autoCapitalize="none"
         />
         <View style={styles.buttonContainer}>
           {loading ? (
@@ -66,8 +66,8 @@ const Login = ({ navigation }) => {
           ) : (
             <Button onPress={handleLoginPress} label="Valider" />
           )}
+          <Button onPress={() => navigation.navigate('Signup')} label="Sign up" />
         </View>
-        <Button onPress={() => navigation.navigate('Signup')} label="Sign up" />
       </View>
     </SafeAreaView>
   )

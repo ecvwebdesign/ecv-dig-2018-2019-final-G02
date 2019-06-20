@@ -1,10 +1,13 @@
-const authLogin = (email, password) => {
-  setTimeout(() => {
-    if (email === 'test@test.com' && password === 'password' ) {
+
+const authLogin = async (email, password) => {
+  console.log('hello')
+  await setTimeout(() => {
+    console.log('wait')
+    if (email === 'test@test.com' && password === 'password') {
       return true
     }
     return false
-  }, 500)
+  }, 100)
 }
 
 export default { authLogin }
