@@ -1,0 +1,51 @@
+[
+  {
+    "id": 87654,
+    "name": "Hello",
+    "price": 30.50,
+    "description": "C'est beaucoup tous ca quand meme",
+    "supply": 200
+  },
+  {
+    "id": 252345,
+    "name": "Hello",
+    "price": 30.50,
+    "description": "C'est beaucoup tous ca quand meme",
+    "supply": 200
+  },
+  {
+    "id": 345678,
+    "name": "Hello",
+    "price": 30.50,
+    "description": "C'est beaucoup tous ca quand meme",
+    "supply": 200
+  },
+  {
+    "id": 123456,
+    "name": "Hello",
+    "price": 30.50,
+    "description": "C'est beaucoup tous ca quand meme",
+    "supply": 200
+  },
+  {
+    "id": 543,
+    "name": "Hello",
+    "price": 30.50,
+    "description": "C'est beaucoup tous ca quand meme",
+    "supply": 200
+  },
+  {
+    "id": 76543,
+    "name": "Hello",
+    "price": 30.50,
+    "description": "C'est beaucoup tous ca quand meme",
+    "supply": 200
+  },
+  {
+    "id": 132435465,
+    "name": "Hello",
+    "price": 30.50,
+    "description": "C'est beaucoup tous ca quand meme",
+    "supply": 200
+  }
+]

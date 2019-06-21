@@ -1,5 +1,7 @@
 import React from 'react'
-import { Image } from 'react-native'
+import {
+  Image,
+} from 'react-native'
 import {
   createStackNavigator, createAppContainer, createSwitchNavigator, createBottomTabNavigator,
 } from 'react-navigation'
@@ -10,6 +12,7 @@ import Informations from '../modules/account/scenes/Informations'
 import Bookmarks from '../modules/bookmarks/scenes/Bookmarks'
 import Scanner from '../modules/scanner/scenes/Scanner'
 import Cart from '../modules/cart/scenes/Cart'
+import Header from '../commons/components/Header'
 
 const AccountStack = createStackNavigator(
   {
@@ -45,7 +48,6 @@ const BottomTabStack = createBottomTabNavigator(
   {
     initialRouteName: 'Catalogue',
     mode: 'modal',
-    headerMode: 'none',
     defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused }) => {
         const { routeName } = navigation.state
@@ -67,9 +69,9 @@ const BottomTabStack = createBottomTabNavigator(
             break
           case 'Scanner':
             if (focused) {
-              iconSource = require('../commons/assets/images/search_actif.png')
+              iconSource = require('../commons/assets/images/Rectangle.png')
             } else {
-              iconSource = require('../commons/assets/images/search_inactif.png')
+              iconSource = require('../commons/assets/images/Rectangle.png')
             }
             break
           case 'Account':
@@ -86,7 +88,7 @@ const BottomTabStack = createBottomTabNavigator(
           return (
             <Image
               source={iconSource}
-              style={{ width: 20, marginBottom: 50 }}
+              style={{ width: 50, marginBottom: 50 }}
               resizeMode="contain"
             />
           )
@@ -135,15 +137,25 @@ const RootStack = createStackNavigator(
   {
     Authentification: {
       screen: AuthStack,
+      navigationOptions: {
+        header: null,
+      },
     },
     BottomTab: {
       screen: BottomTabStack,
+      navigationOptions: {
+        header: (props) => <Header {...props} />,
+      },
     },
   },
   {
-    initialRouteName: 'Authentification',
-    mode: 'modal',
-    headerMode: 'none',
+    initialRouteName: 'BottomTab',
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: 'transparent',
+      },
+      headerTintColor: '#fff',
+    },
   }
 )
 
