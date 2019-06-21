@@ -2,6 +2,7 @@
   {
     "id": 87654,
     "name": "Hello",
+    "image" : "https://media.intersport.fr/is/image/intersportfr/239574_LTK_Q1?$produit_l$",
     "price": 30.50,
     "description": "C'est beaucoup tous ca quand meme",
     "supply": 200
@@ -9,6 +10,7 @@
   {
     "id": 252345,
     "name": "Hello",
+    "image": "https://media.intersport.fr/is/image/intersportfr/BV4777_37Z_Q1?$produit_l$",
     "price": 30.50,
     "description": "C'est beaucoup tous ca quand meme",
     "supply": 200
@@ -16,6 +18,7 @@
   {
     "id": 345678,
     "name": "Hello",
+    "image": "https://media.intersport.fr/is/image/intersportfr/273292_VXU_Q1?$produit_l$",
     "price": 30.50,
     "description": "C'est beaucoup tous ca quand meme",
     "supply": 200
@@ -23,6 +26,7 @@
   {
     "id": 123456,
     "name": "Hello",
+    "image": "https://media.intersport.fr/is/image/intersportfr/861778_394_Q1?$produit_l$",
     "price": 30.50,
     "description": "C'est beaucoup tous ca quand meme",
     "supply": 200
@@ -30,6 +34,7 @@
   {
     "id": 543,
     "name": "Hello",
+    "image": "https://media.intersport.fr/is/image/intersportfr/Y8SUQ3_29K_PR?$produit_l$",
     "price": 30.50,
     "description": "C'est beaucoup tous ca quand meme",
     "supply": 200
@@ -37,6 +42,7 @@
   {
     "id": 76543,
     "name": "Hello",
+    "image": "https://media.intersport.fr/is/image/intersportfr/H8K2L__4K2_Q1?$produit_l$&$product_grey$",
     "price": 30.50,
     "description": "C'est beaucoup tous ca quand meme",
     "supply": 200
@@ -44,6 +50,7 @@
   {
     "id": 132435465,
     "name": "Hello",
+    "image": "https://media.intersport.fr/is/image/intersportfr/Y7SUKE_AIA_PR?$produit_l$",
     "price": 30.50,
     "description": "C'est beaucoup tous ca quand meme",
     "supply": 200

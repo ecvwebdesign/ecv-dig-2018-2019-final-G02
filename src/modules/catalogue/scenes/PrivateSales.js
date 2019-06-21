@@ -1,74 +1,80 @@
 import React, { useState } from 'react'
 import {
-  StyleSheet, View, Text, TextInput, TouchableOpacity,
+  StyleSheet, View, Text, TouchableOpacity,
 } from 'react-native'
 import PropTypes from 'prop-types'
 import theme from '../../../themes/default'
+import ProductsList from '../components/ProductsList'
+import products from '../../../commons/utils/fakeData.json'
 
-const Home = ({ navigation }) => {
-  const [search, setSearch] = useState('')
+const PrivateSales = ({ navigation }) => {
+  const [modalOpened, setModalOpened] = useState(false)
 
-  const onSearchChange = (searchInput) => {
-    setSearch(searchInput)
+  const openModal = () => {
+    setModalOpened(!modalOpened)
   }
 
-  return (
-    <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        onChangeText={onSearchChange}
-        value={search}
-        placeholder="Taper votre recherche..."
-        maxLength={256}
-      />
-      <View style={styles.categorieContainer}>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={() => navigation.navigate('PrivateSales')}>
-            <Text>Ventes Privées</Text>
+  if (modalOpened) {
+    return (
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.headerText}>Filtres</Text>
+          <TouchableOpacity onPress={openModal}>
+            <Text>X</Text>
           </TouchableOpacity>
         </View>
       </View>
+    )
+  }
+  return (
+    <View>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Text>{'<'}</Text>
+      </TouchableOpacity>
+      <Text style={styles.title}>Ventes Privées</Text>
+      <Text>Description</Text>
       <View style={styles.categorieContainer}>
         <View style={styles.halfContainerLeft}>
-          <TouchableOpacity style={styles.buttonWrapper} onPress={() => navigation.navigate('ProductsList')}>
-            <Text>Sport</Text>
+          <TouchableOpacity style={styles.buttonWrapper} onPress={openModal}>
+            <Text>filtres</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.halfContainerRight}>
-          <TouchableOpacity style={styles.buttonWrapper} onPress={() => navigation.navigate('ProductsList')}>
-            <Text>Marques</Text>
+          <TouchableOpacity style={styles.buttonWrapper} onPress={openModal}>
+            <Text>tri</Text>
           </TouchableOpacity>
         </View>
       </View>
+      <ProductsList navigation={navigation} products={products} />
     </View>
   )
 }
 
 
-Home.propTypes = {
+PrivateSales.propTypes = {
   navigation: PropTypes.objectOf(PropTypes.shape).isRequired,
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: theme.common.defaultSidePadding,
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  headerText: {
+    textAlign: 'center',
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: 32,
+    marginBottom: 30,
   },
   categorieContainer: {
     flexDirection: 'row',
     width: '100%',
-    height: 80,
+    height: 30,
     justifyContent: 'space-between',
     alignItems: 'center',
     marginVertical: 10,
-  },
-  buttonContainer: {
-    height: '100%',
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#222222',
   },
   halfContainerLeft: {
     width: '48%',
@@ -103,8 +109,9 @@ const styles = StyleSheet.create({
     borderRadius: 3,
     paddingHorizontal: 10,
     paddingVertical: 5,
-    marginVertical: 20,
+    marginVertical: 10,
   },
 })
 
-export default Home
+export default PrivateSales
+

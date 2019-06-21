@@ -8,6 +8,8 @@ import {
 import Login from '../modules/authentification/scenes/Login'
 import Signup from '../modules/authentification/scenes/Signup'
 import Home from '../modules/catalogue/scenes/Home'
+import ProductsCategorie from '../modules/catalogue/scenes/ProductsCategorie'
+import PrivateSales from '../modules/catalogue/scenes/PrivateSales'
 import Informations from '../modules/account/scenes/Informations'
 import Bookmarks from '../modules/bookmarks/scenes/Bookmarks'
 import Scanner from '../modules/scanner/scenes/Scanner'
@@ -28,9 +30,15 @@ const AccountStack = createStackNavigator(
 const CatalogueStack = createStackNavigator(
   {
     Home: { screen: Home },
+    ProductsList: {
+      screen: ProductsCategorie,
+    },
+    PrivateSales: {
+      screen: PrivateSales,
+    },
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'PrivateSales',
     mode: 'modal',
     headerMode: 'none',
   }
