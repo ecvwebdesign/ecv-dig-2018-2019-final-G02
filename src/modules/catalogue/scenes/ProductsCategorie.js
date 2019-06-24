@@ -4,11 +4,48 @@ import {
 } from 'react-native'
 import PropTypes from 'prop-types'
 import theme from '../../../themes/default'
+import ProductsList from '../components/ProductsList'
+import products from '../../../commons/utils/fakeData.json'
 
 const ProductCategorie = ({ navigation }) => {
+  const [modalOpened, setModalOpened] = useState(false)
+
+  const openModal = () => {
+    setModalOpened(!modalOpened)
+  }
+
+  if (modalOpened) {
+    return (
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.headerText}>Filtres</Text>
+          <TouchableOpacity onPress={openModal}>
+            <Text>X</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    )
+  }
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Liste Produits</Text>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Text>{'<'}</Text>
+      </TouchableOpacity>
+      <Text style={styles.title}>Listes Produits</Text>
+      <View style={styles.categorieContainer}>
+        <View style={styles.halfContainerLeft}>
+          <TouchableOpacity style={styles.buttonWrapper} onPress={openModal}>
+            <Text>filtres</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.halfContainerRight}>
+          <TouchableOpacity style={styles.buttonWrapper} onPress={openModal}>
+            <Text>tri</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <ProductsList navigation={navigation} products={products} />
     </View>
   )
 }

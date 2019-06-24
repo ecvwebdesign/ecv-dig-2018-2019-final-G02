@@ -1,14 +1,23 @@
 import React from 'react'
 import {
-  StyleSheet, View, Text,
+  StyleSheet, View, Text, TouchableOpacity,
 } from 'react-native'
+import PropTypes from 'prop-types'
 import theme from '../../../themes/default'
 
-const Bookmarks = () => (
+const Bookmarks = ({ navigation }) => (
   <View style={styles.container}>
     <Text style={styles.title}>Bookmarks</Text>
+
+    <TouchableOpacity onPress={() => navigation.navigate('ProductDetail')}>
+      <Text>Produit</Text>
+    </TouchableOpacity>
   </View>
 )
+
+Bookmarks.propTypes = {
+  navigation: PropTypes.objectOf(PropTypes.shape).isRequired,
+}
 
 const styles = StyleSheet.create({
   container: {

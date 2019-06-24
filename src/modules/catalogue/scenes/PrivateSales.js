@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import {
-  StyleSheet, View, Text, TouchableOpacity,
+  StyleSheet, View, Text, TouchableOpacity, ScrollView,
 } from 'react-native'
 import PropTypes from 'prop-types'
-import theme from '../../../themes/default'
 import ProductsList from '../components/ProductsList'
 import products from '../../../commons/utils/fakeData.json'
 
@@ -31,21 +30,23 @@ const PrivateSales = ({ navigation }) => {
       <TouchableOpacity onPress={() => navigation.goBack()}>
         <Text>{'<'}</Text>
       </TouchableOpacity>
-      <Text style={styles.title}>Ventes Privées</Text>
-      <Text>Description</Text>
-      <View style={styles.categorieContainer}>
-        <View style={styles.halfContainerLeft}>
-          <TouchableOpacity style={styles.buttonWrapper} onPress={openModal}>
-            <Text>filtres</Text>
-          </TouchableOpacity>
+      <ScrollView>
+        <Text style={styles.title}>Ventes Privées</Text>
+        <Text>Description</Text>
+        <View style={styles.categorieContainer}>
+          <View style={styles.halfContainerLeft}>
+            <TouchableOpacity style={styles.buttonWrapper} onPress={openModal}>
+              <Text>filtres</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.halfContainerRight}>
+            <TouchableOpacity style={styles.buttonWrapper} onPress={openModal}>
+              <Text>tri</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.halfContainerRight}>
-          <TouchableOpacity style={styles.buttonWrapper} onPress={openModal}>
-            <Text>tri</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-      <ProductsList navigation={navigation} products={products} />
+        <ProductsList navigation={navigation} products={products} />
+      </ScrollView>
     </View>
   )
 }

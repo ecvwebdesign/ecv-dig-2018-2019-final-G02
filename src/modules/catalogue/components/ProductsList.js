@@ -1,24 +1,46 @@
 import React, { useState } from 'react'
 import {
-  StyleSheet, View, Text, TouchableOpacity, Image,
+  StyleSheet, View, Text, TouchableOpacity, ScrollView,
 } from 'react-native'
 import PropTypes from 'prop-types'
-import theme from '../../../themes/default'
+import CustomImage from '../../../commons/components/CustomImage'
+import getImageSize from '../../../commons/utils/images'
 
 const ProductList = ({ navigation, products }) => {
-  console.log(products)
+  const aspectRatio = 150 / 150
+  const imageSizes = getImageSize(aspectRatio, 10)
 
   const allProducts = products.map((product) => (
-    <View key={product.id}>
-      <Image style={{ width: 50, height: 50 }} source={{ uri: product.image }} />
-      <Text>{product.name}</Text>
+    <View style={styles.productContainer} key={product.id}>
+      <TouchableOpacity onPress={() => navigation.navigate('ProductDetail')}>
+        <View>
+          <CustomImage
+            source={{ uri: product.image }}
+            width={imageSizes.width / 2}
+            height={imageSizes.height / 2}
+          />
+          <View style={styles.textContainer}>
+            <Text>
+              {product.supply
+                ? ''
+                : 'épuisé'
+              }
+            </Text>
+            <Text>MARQUE</Text>
+            <Text>{product.name}</Text>
+            <Text>{product.price}</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
     </View>
   ))
 
   return (
-    <View>
-      {allProducts}
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        {allProducts}
+      </View>
+    </ScrollView>
   )
 }
 
@@ -29,27 +51,30 @@ ProductList.propTypes = {
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: theme.common.defaultSidePadding,
+    // marginHorizontal: 10,
+    marginVertical: 10,
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
+  },
+  productContainer: {
+    width: '42%',
+    marginHorizontal: '2%',
+    marginVertical: 10,
+  },
+  textContainer: {
+    paddingLeft: 5,
+    marginVertical: 5,
   },
   title: {
     textAlign: 'center',
-    fontSize: 32,
+    fontSize: 20,
     marginBottom: 30,
   },
-  buttonContainer: {
-    marginVertical: 10,
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#000000',
-    borderRadius: 3,
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    marginVertical: 10,
+  image: {
+    width: '100%',
   },
 })
 
 export default ProductList
-
