@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import {
-  StyleSheet, View, Text, TouchableOpacity,
+  StyleSheet, View, Text, TouchableOpacity, ScrollView,
 } from 'react-native'
 import PropTypes from 'prop-types'
-import theme from '../../../themes/default'
 import ProductsList from '../components/ProductsList'
 import products from '../../../commons/utils/fakeData.json'
 
-const ProductCategorie = ({ navigation }) => {
+const ProductsCategorie = ({ navigation }) => {
   const [modalOpened, setModalOpened] = useState(false)
 
   const openModal = () => {
@@ -26,48 +25,83 @@ const ProductCategorie = ({ navigation }) => {
       </View>
     )
   }
-
   return (
-    <View style={styles.container}>
+    <View>
       <TouchableOpacity onPress={() => navigation.goBack()}>
         <Text>{'<'}</Text>
       </TouchableOpacity>
-      <Text style={styles.title}>Listes Produits</Text>
-      <View style={styles.categorieContainer}>
-        <View style={styles.halfContainerLeft}>
-          <TouchableOpacity style={styles.buttonWrapper} onPress={openModal}>
-            <Text>filtres</Text>
-          </TouchableOpacity>
+      <ScrollView>
+        <Text style={styles.title}>Ventes Privées</Text>
+        <View style={styles.categorieContainer}>
+          <View style={styles.halfContainerLeft}>
+            <TouchableOpacity style={styles.buttonWrapper} onPress={openModal}>
+              <Text>filtres</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.halfContainerRight}>
+            <TouchableOpacity style={styles.buttonWrapper} onPress={openModal}>
+              <Text>tri</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.halfContainerRight}>
-          <TouchableOpacity style={styles.buttonWrapper} onPress={openModal}>
-            <Text>tri</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-      <ProductsList navigation={navigation} products={products} />
+        <ProductsList navigation={navigation} products={products} />
+      </ScrollView>
     </View>
   )
 }
 
 
-ProductCategorie.propTypes = {
+ProductsCategorie.propTypes = {
   navigation: PropTypes.objectOf(PropTypes.shape).isRequired,
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginHorizontal: theme.common.defaultSidePadding,
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  headerText: {
+    textAlign: 'center',
   },
   title: {
     textAlign: 'center',
     fontSize: 32,
     marginBottom: 30,
   },
-  buttonContainer: {
+  categorieContainer: {
+    flexDirection: 'row',
+    width: '100%',
+    height: 30,
+    justifyContent: 'space-between',
+    alignItems: 'center',
     marginVertical: 10,
+  },
+  halfContainerLeft: {
+    width: '48%',
+    height: '100%',
     flexDirection: 'row',
     justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: '1%',
+    borderWidth: 1,
+    borderColor: '#222222',
+  },
+  halfContainerRight: {
+    width: '48%',
+    height: '100%',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: '1%',
+    borderWidth: 1,
+    borderColor: '#222222',
+  },
+  buttonWrapper: {
+    width: '100%',
+    height: '100%',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   input: {
     borderWidth: 1,
@@ -79,5 +113,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default ProductCategorie
-
+export default ProductsCategorie

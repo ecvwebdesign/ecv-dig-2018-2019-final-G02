@@ -4,9 +4,15 @@ import {
 } from 'react-native'
 import theme from '../../../themes/default'
 
-const Cart = () => (
+const Recap = () => (
   <View style={styles.container}>
-    <Text style={styles.title}>Cart</Text>
+    <View style={styles.header}>
+      <Text>{'<'}</Text>
+      <Text style={styles.titleHeader}>Panier</Text>
+    </View>
+    <Text style={styles.title}>
+      Paiement
+    </Text>
   </View>
 )
 
@@ -34,4 +40,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default Cart
+export default Recap

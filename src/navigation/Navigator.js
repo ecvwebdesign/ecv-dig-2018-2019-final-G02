@@ -14,7 +14,9 @@ import ProductDetail from '../modules/catalogue/scenes/ProductDetail'
 import Informations from '../modules/account/scenes/Informations'
 import Bookmarks from '../modules/bookmarks/scenes/Bookmarks'
 import Scanner from '../modules/scanner/scenes/Scanner'
-import Cart from '../modules/cart/scenes/Cart'
+import Recap from '../modules/cart/scenes/Recap'
+import InqueriesInfos from '../modules/cart/scenes/InqueriesInfos'
+import Paiement from '../modules/cart/scenes/Paiement'
 import Header from '../commons/components/Header'
 
 const AccountStack = createStackNavigator(
@@ -28,10 +30,23 @@ const AccountStack = createStackNavigator(
   }
 )
 
+const CartStack = createStackNavigator(
+  {
+    Recap: { screen: Recap },
+    InqueriesInfos: { screen: InqueriesInfos },
+    Paiement: { screen: Paiement },
+  },
+  {
+    initialRouteName: 'Recap',
+    mode: 'modal',
+    headerMode: 'none',
+  }
+)
+
 const CatalogueStack = createStackNavigator(
   {
     Home: { screen: Home },
-    ProductsList: {
+    ProductsCategorie: {
       screen: ProductsCategorie,
     },
     PrivateSales: {
@@ -42,7 +57,7 @@ const CatalogueStack = createStackNavigator(
     },
   },
   {
-    initialRouteName: 'PrivateSales',
+    initialRouteName: 'ProductsCategorie',
     mode: 'modal',
     headerMode: 'none',
   }
@@ -54,7 +69,7 @@ const BottomTabStack = createBottomTabNavigator(
     Bookmarks: { screen: Bookmarks },
     Scanner: { screen: Scanner },
     Account: AccountStack,
-    Cart: { screen: Cart },
+    Cart: CartStack,
   },
   {
     initialRouteName: 'Catalogue',
@@ -102,17 +117,17 @@ const BottomTabStack = createBottomTabNavigator(
           default:
             break
         }
-        if (routeName === 'Scanner') {
-          return (
-            <View style={{ width: 20, height: 20, backgroundColor: 'grey' }}>
-              <Image
-                source={iconSource}
-                style={{ width: 50, marginBottom: 50 }}
-                resizeMode="contain"
-              />
-            </View>
-          )
-        }
+        // if (routeName === 'Scanner') {
+        //   return (
+        //     <View style={{ width: 20, height: 20, backgroundColor: 'grey' }}>
+        //       <Image
+        //         source={iconSource}
+        //         style={{ width: 50, marginBottom: 50 }}
+        //         resizeMode="contain"
+        //       />
+        //     </View>
+        //   )
+        // }
         return (
           <Image
             source={iconSource}

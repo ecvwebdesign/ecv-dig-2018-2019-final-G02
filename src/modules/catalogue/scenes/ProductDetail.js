@@ -5,10 +5,9 @@ import {
 import PropTypes from 'prop-types'
 import products from '../../../commons/utils/fakeData.json'
 import Loader from '../../../commons/components/Loader'
-import CustomImage from '../../../commons/components/CustomImage'
 import getImageSize from '../../../commons/utils/images'
 
-const Home = ({ navigation }) => {
+const ProductDetail = ({ navigation }) => {
   const [product, setProduct] = useState(null)
 
   useEffect(() => {
@@ -38,7 +37,7 @@ const Home = ({ navigation }) => {
                     <View>
                       <TouchableOpacity>
                         <Image
-                          style={styles.icon}
+                          style={styles.iconOne}
                           source={require('../../../commons/assets/images/heart.png')}
                         />
                       </TouchableOpacity>
@@ -46,7 +45,7 @@ const Home = ({ navigation }) => {
                     <View>
                       <TouchableOpacity>
                         <Image
-                          style={styles.icon}
+                          style={styles.iconTwo}
                           source={require('../../../commons/assets/images/bag.png')}
                         />
                       </TouchableOpacity>
@@ -85,7 +84,7 @@ const Home = ({ navigation }) => {
 }
 
 
-Home.propTypes = {
+ProductDetail.propTypes = {
   navigation: PropTypes.objectOf(PropTypes.shape).isRequired,
 }
 
@@ -107,10 +106,14 @@ const styles = StyleSheet.create({
     right: 20,
     top: -10,
   },
-  icon: {
+  iconOne: {
     width: 30,
+    height: 27,
+  },
+  iconTwo: {
+    width: 23,
     height: 30,
   },
 })
 
-export default Home
+export default ProductDetail
