@@ -4,7 +4,7 @@ import {
 } from 'react-native'
 import theme from '../../../themes/default'
 
-const Scanner = () => (
+const ProductScanner = () => (
   <View style={styles.container}>
     <Text style={styles.title}>Scanner</Text>
   </View>
@@ -34,4 +34,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default Scanner
+export default ProductScanner

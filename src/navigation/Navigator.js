@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  Image, View,
+  Image,
 } from 'react-native'
 import {
   createStackNavigator, createAppContainer, createSwitchNavigator, createBottomTabNavigator,
@@ -13,7 +13,8 @@ import PrivateSales from '../modules/catalogue/scenes/PrivateSales'
 import ProductDetail from '../modules/catalogue/scenes/ProductDetail'
 import Informations from '../modules/account/scenes/Informations'
 import Bookmarks from '../modules/bookmarks/scenes/Bookmarks'
-import Scanner from '../modules/scanner/scenes/Scanner'
+import MarketScanner from '../modules/catalogue/scenes/MarketScanner'
+import ProductScanner from '../modules/catalogue/scenes/ProductScanner'
 import Recap from '../modules/cart/scenes/Recap'
 import InqueriesInfos from '../modules/cart/scenes/InqueriesInfos'
 import Paiement from '../modules/cart/scenes/Paiement'
@@ -49,11 +50,14 @@ const CatalogueStack = createStackNavigator(
     ProductsCategorie: {
       screen: ProductsCategorie,
     },
-    PrivateSales: {
-      screen: PrivateSales,
-    },
     ProductDetail: {
       screen: ProductDetail,
+    },
+    MarketScanner: {
+      screen: MarketScanner,
+    },
+    ProductScanner: {
+      screen: ProductScanner,
     },
   },
   {
@@ -67,7 +71,7 @@ const BottomTabStack = createBottomTabNavigator(
   {
     Catalogue: CatalogueStack,
     Bookmarks: { screen: Bookmarks },
-    Scanner: { screen: Scanner },
+    Sales: { screen: PrivateSales },
     Account: AccountStack,
     Cart: CartStack,
   },
