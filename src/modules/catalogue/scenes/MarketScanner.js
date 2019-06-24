@@ -1,36 +1,58 @@
 import React from 'react'
 import {
-  StyleSheet, View, Text,
+  StyleSheet, Linking, View, Text,
 } from 'react-native'
-import theme from '../../../themes/default'
+import QRCodeScanner from 'react-native-qrcode-scanner'
 
-const MarketScanner = () => (
-  <View style={styles.container}>
-    <Text style={styles.title}>Scanner</Text>
-  </View>
-)
+const MarketScanner = () => {
+  const onSuccess = (e) => {
+    Linking.openURL(e.data).catch((err) => console.error('An error occured', err))
+  }
+
+  return (
+    <View style={styles.container}>
+      <QRCodeScanner
+        onRead={onSuccess}
+        cameraStyle={styles.cameraContainer}
+        showMarker
+        customMarker={(
+          <View style={styles.markerContainer}>
+            <Text style={styles.markerText}>Visez le QR Code</Text>
+            <View style={styles.marker} />
+          </View>
+)}
+      />
+    </View>
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: theme.common.defaultSidePadding,
+    width: '100%',
+    height: '100%',
+    flex: 1,
   },
-  title: {
-    textAlign: 'center',
-    fontSize: 32,
-    marginBottom: 30,
+  cameraContainer: {
+    height: '100%',
+    width: '100%',
   },
-  buttonContainer: {
-    marginVertical: 10,
-    flexDirection: 'row',
-    justifyContent: 'center',
+  markerContainer: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    height: 300,
+    width: 250,
   },
-  input: {
-    borderWidth: 1,
-    borderColor: '#000000',
-    borderRadius: 3,
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    marginVertical: 10,
+  markerText: {
+    fontSize: 20,
+    color: '#FFFFFF',
+  },
+  marker: {
+    height: 250,
+    width: 250,
+    borderColor: '#8b8b8b',
+    borderWidth: 5,
+    borderRadius: 12,
   },
 })
 

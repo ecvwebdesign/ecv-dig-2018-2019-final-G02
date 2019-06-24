@@ -1,9 +1,10 @@
 import React from 'react'
+import { Image } from 'react-native'
 import {
-  Image,
-} from 'react-native'
-import {
-  createStackNavigator, createAppContainer, createSwitchNavigator, createBottomTabNavigator,
+  createStackNavigator,
+  createAppContainer,
+  createSwitchNavigator,
+  createBottomTabNavigator,
 } from 'react-navigation'
 import Login from '../modules/authentification/scenes/Login'
 import Signup from '../modules/authentification/scenes/Signup'
@@ -52,9 +53,6 @@ const CatalogueStack = createStackNavigator(
     },
     ProductDetail: {
       screen: ProductDetail,
-    },
-    MarketScanner: {
-      screen: MarketScanner,
     },
     ProductScanner: {
       screen: ProductScanner,
@@ -121,7 +119,7 @@ const BottomTabStack = createBottomTabNavigator(
           default:
             break
         }
-        // if (routeName === 'Scanner') {
+        // If (routeName === 'Scanner') {
         //   return (
         //     <View style={{ width: 20, height: 20, backgroundColor: 'grey' }}>
         //       <Image
@@ -186,15 +184,13 @@ const RootStack = createStackNavigator(
         header: (props) => <Header {...props} />,
       },
     },
+    MarketScanner: {
+      screen: MarketScanner,
+    },
   },
   {
     initialRouteName: 'BottomTab',
-    navigationOptions: {
-      headerStyle: {
-        backgroundColor: 'transparent',
-      },
-      headerTintColor: '#fff',
-    },
+    headerMode: 'none',
   }
 )
 

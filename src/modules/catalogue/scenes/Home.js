@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import {
-  StyleSheet, View, Text, TextInput, TouchableOpacity,
+  StyleSheet,
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Image,
 } from 'react-native'
 import PropTypes from 'prop-types'
-import theme from '../../../themes/default'
 
 const Home = ({ navigation }) => {
   const [search, setSearch] = useState('')
@@ -14,13 +18,33 @@ const Home = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        onChangeText={onSearchChange}
-        value={search}
-        placeholder="Taper votre recherche..."
-        maxLength={256}
-      />
+      <View>
+        <TouchableOpacity onPress={() => navigation.navigate('MarketScanner')}>
+          <Text>Activer le mode magasin</Text>
+          <Text>
+            L’application s’adapte à votre magasin et à vos préférences
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.searchContainer}>
+        <TextInput
+          style={styles.input}
+          onChangeText={onSearchChange}
+          value={search}
+          placeholder="Taper votre recherche..."
+          maxLength={256}
+        />
+        <View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ProductScanner')}
+          >
+            <Image
+              style={styles.barcode}
+              source={require('../../../commons/assets/images/barcode.png')}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
       <View style={styles.categorieContainer}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={() => navigation.navigate('PrivateSales')}>
@@ -30,12 +54,18 @@ const Home = ({ navigation }) => {
       </View>
       <View style={styles.categorieContainer}>
         <View style={styles.halfContainerLeft}>
-          <TouchableOpacity style={styles.buttonWrapper} onPress={() => navigation.navigate('ProductsList')}>
+          <TouchableOpacity
+            style={styles.buttonWrapper}
+            onPress={() => navigation.navigate('ProductsList')}
+          >
             <Text>Sport</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.halfContainerRight}>
-          <TouchableOpacity style={styles.buttonWrapper} onPress={() => navigation.navigate('ProductsList')}>
+          <TouchableOpacity
+            style={styles.buttonWrapper}
+            onPress={() => navigation.navigate('ProductsList')}
+          >
             <Text>Marques</Text>
           </TouchableOpacity>
         </View>
@@ -44,14 +74,14 @@ const Home = ({ navigation }) => {
   )
 }
 
-
 Home.propTypes = {
   navigation: PropTypes.objectOf(PropTypes.shape).isRequired,
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: theme.common.defaultSidePadding,
+    marginHorizontal: 15,
+    marginVertical: 10,
   },
   categorieContainer: {
     flexDirection: 'row',
@@ -98,12 +128,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   input: {
-    borderWidth: 1,
-    borderColor: '#000000',
-    borderRadius: 3,
     paddingHorizontal: 10,
     paddingVertical: 5,
     marginVertical: 20,
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#000000',
+    borderRadius: 3,
+  },
+  barcode: {
+    width: 30,
+    height: 20,
   },
 })
 
