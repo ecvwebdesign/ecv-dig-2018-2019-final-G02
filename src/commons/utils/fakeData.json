@@ -5,7 +5,7 @@
     "image" : "https://media.intersport.fr/is/image/intersportfr/239574_LTK_Q1?$produit_l$",
     "price": 30.50,
     "description": "C'est beaucoup tous ca quand meme",
-    "supply": 200
+    "supply": 3
   },
   {
     "id": 252345,
@@ -29,7 +29,7 @@
     "image": "https://media.intersport.fr/is/image/intersportfr/861778_394_Q1?$produit_l$",
     "price": 30.50,
     "description": "C'est beaucoup tous ca quand meme",
-    "supply": 200
+    "supply": 0
   },
   {
     "id": 543876,

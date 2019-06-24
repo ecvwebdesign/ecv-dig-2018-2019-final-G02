@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  Image,
+  Image, View,
 } from 'react-native'
 import {
   createStackNavigator, createAppContainer, createSwitchNavigator, createBottomTabNavigator,
@@ -66,30 +66,37 @@ const BottomTabStack = createBottomTabNavigator(
         switch (routeName) {
           case 'Catalogue':
             if (focused) {
-              iconSource = require('../commons/assets/images/journal_actif.png')
+              iconSource = require('../commons/assets/images/home-full.png')
             } else {
-              iconSource = require('../commons/assets/images/journal_inactif.png')
+              iconSource = require('../commons/assets/images/home.png')
             }
             break
           case 'Bookmarks':
             if (focused) {
-              iconSource = require('../commons/assets/images/enregistres_actif.png')
+              iconSource = require('../commons/assets/images/heart-full.png')
             } else {
-              iconSource = require('../commons/assets/images/enregistres_inactif.png')
+              iconSource = require('../commons/assets/images/heart.png')
             }
             break
           case 'Scanner':
             if (focused) {
-              iconSource = require('../commons/assets/images/Rectangle.png')
+              iconSource = require('../commons/assets/images/promo-full.png')
             } else {
-              iconSource = require('../commons/assets/images/Rectangle.png')
+              iconSource = require('../commons/assets/images/promo.png')
             }
             break
           case 'Account':
             if (focused) {
-              iconSource = require('../commons/assets/images/profile_actif.png')
+              iconSource = require('../commons/assets/images/user-full.png')
             } else {
-              iconSource = require('../commons/assets/images/profile_inactif.png')
+              iconSource = require('../commons/assets/images/user.png')
+            }
+            break
+          case 'Cart':
+            if (focused) {
+              iconSource = require('../commons/assets/images/bag-full.png')
+            } else {
+              iconSource = require('../commons/assets/images/bag.png')
             }
             break
           default:
@@ -97,11 +104,13 @@ const BottomTabStack = createBottomTabNavigator(
         }
         if (routeName === 'Scanner') {
           return (
-            <Image
-              source={iconSource}
-              style={{ width: 50, marginBottom: 50 }}
-              resizeMode="contain"
-            />
+            <View style={{ width: 20, height: 20, backgroundColor: 'grey' }}>
+              <Image
+                source={iconSource}
+                style={{ width: 50, marginBottom: 50 }}
+                resizeMode="contain"
+              />
+            </View>
           )
         }
         return (

@@ -1,16 +1,86 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
-  StyleSheet, View, Text, TextInput, TouchableOpacity,
+  StyleSheet, View, Text, TouchableOpacity, ScrollView, Image, ImageBackground,
 } from 'react-native'
 import PropTypes from 'prop-types'
-import theme from '../../../themes/default'
 import products from '../../../commons/utils/fakeData.json'
+import Loader from '../../../commons/components/Loader'
+import CustomImage from '../../../commons/components/CustomImage'
+import getImageSize from '../../../commons/utils/images'
 
 const Home = ({ navigation }) => {
+  const [product, setProduct] = useState(null)
+
+  useEffect(() => {
+    getProduct()
+  })
+
+  const getProduct = () => {
+    const id = navigation.getParam('id')
+    const productFiltered = products.filter((productItem) => productItem.id === id)
+    const productData = { ...productFiltered[0] }
+    setProduct({ ...productData })
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Gello</Text>
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        {product
+          ? (
+            <View>
+              <Text>Marque</Text>
+              <Text>{product.name}</Text>
+              <Text>REF</Text>
+              <Text>{product.price}</Text>
+              <View>
+                <ImageBackground style={styles.imageBackground} source={{ uri: product.image }}>
+                  <View style={styles.iconContainer}>
+                    <View>
+                      <TouchableOpacity>
+                        <Image
+                          style={styles.icon}
+                          source={require('../../../commons/assets/images/heart.png')}
+                        />
+                      </TouchableOpacity>
+                    </View>
+                    <View>
+                      <TouchableOpacity>
+                        <Image
+                          style={styles.icon}
+                          source={require('../../../commons/assets/images/bag.png')}
+                        />
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                </ImageBackground>
+              </View>
+              <TouchableOpacity>
+                <Text>Couleur</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text>Taille</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text>Guide des tailles</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text>Informations sur le produit</Text>
+              </TouchableOpacity>
+              <View>
+                <TouchableOpacity>
+                  <Text>Reserver en magasin</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                  <Text>Ajouter au panier</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          ) : (
+            <Loader />
+          )
+        }
+      </View>
+    </ScrollView>
   )
 }
 
@@ -19,61 +89,27 @@ Home.propTypes = {
   navigation: PropTypes.objectOf(PropTypes.shape).isRequired,
 }
 
+const aspectRatio = 1
+const imageSizes = getImageSize(aspectRatio, 10)
+
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 15,
-  },
-  categorieContainer: {
-    flexDirection: 'row',
-    width: '100%',
-    height: 80,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginVertical: 10,
-  },
-  buttonContainer: {
-    height: '100%',
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#222222',
-  },
-  halfContainerLeft: {
-    width: '48%',
-    height: '100%',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: '1%',
-    borderWidth: 1,
-    borderColor: '#222222',
-  },
-  halfContainerRight: {
-    width: '48%',
-    height: '100%',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: '1%',
-    borderWidth: 1,
-    borderColor: '#222222',
-  },
-  buttonWrapper: {
-    width: '100%',
-    height: '100%',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#000000',
-    borderRadius: 3,
-    paddingHorizontal: 10,
-    paddingVertical: 5,
     marginVertical: 20,
+  },
+  imageBackground: {
+    width: imageSizes.width,
+    height: imageSizes.height,
+    flex: 1,
+  },
+  iconContainer: {
+    position: 'absolute',
+    right: 20,
+    top: -10,
+  },
+  icon: {
+    width: 30,
+    height: 30,
   },
 })
 

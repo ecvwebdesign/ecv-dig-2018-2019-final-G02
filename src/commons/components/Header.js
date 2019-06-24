@@ -13,7 +13,7 @@ const Header = (props) => {
         <TouchableOpacity onPress={() => navigation.navigate('Home')}>
           <Image
 
-            source={require('../assets/images/intersport-logo.png')}
+            source={require('../assets/images/logo-intersport.png')}
             style={styles.logo}
             resizeMode="contain"
           />

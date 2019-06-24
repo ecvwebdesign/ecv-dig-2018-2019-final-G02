@@ -10,9 +10,27 @@ const ProductList = ({ navigation, products }) => {
   const aspectRatio = 150 / 150
   const imageSizes = getImageSize(aspectRatio, 10)
 
+  const handleProductPress = (idProduct) => {
+    navigation.navigate('ProductDetail', {
+      id: idProduct,
+    })
+  }
+
+  const supplyHandler = (supply) => {
+    if (!supply) {
+      return <Text>Epuisé</Text>
+    }
+    if (supply <= 5) {
+      return <Text>Presque plus</Text>
+    }
+    return null
+  }
+
   const allProducts = products.map((product) => (
     <View style={styles.productContainer} key={product.id}>
-      <TouchableOpacity onPress={() => navigation.navigate('ProductDetail')}>
+      <TouchableOpacity
+        onPress={() => handleProductPress(product.id)}
+      >
         <View>
           <CustomImage
             source={{ uri: product.image }}
@@ -20,12 +38,7 @@ const ProductList = ({ navigation, products }) => {
             height={imageSizes.height / 2}
           />
           <View style={styles.textContainer}>
-            <Text>
-              {product.supply
-                ? ''
-                : 'épuisé'
-              }
-            </Text>
+            {supplyHandler(product.supply)}
             <Text>MARQUE</Text>
             <Text>{product.name}</Text>
             <Text>{product.price}</Text>
@@ -51,7 +64,7 @@ ProductList.propTypes = {
 
 const styles = StyleSheet.create({
   container: {
-    // marginHorizontal: 10,
+    // MarginHorizontal: 10,
     marginVertical: 10,
     flex: 1,
     flexDirection: 'row',
