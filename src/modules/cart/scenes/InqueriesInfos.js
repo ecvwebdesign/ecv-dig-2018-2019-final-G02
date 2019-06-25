@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import {
-  StyleSheet, View, Text, TextInput, TouchableOpacity,
+  StyleSheet,
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
 } from 'react-native'
 import PropTypes from 'prop-types'
 
@@ -30,47 +34,30 @@ const InqueriesInfos = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text>{'<'}</Text>
-        <Text style={styles.titleHeader}>Panier</Text>
+        <Text style={styles.titleHeader}>Informations</Text>
       </View>
-      <Text style={styles.title}>
-        Informations de la commande
-      </Text>
+      <Text style={styles.title}>Informations de la commande</Text>
       <View>
-        <TextInput
-          style={styles.input}
-          onChangeText={onNameChange}
-          placeholder="Nom"
-          value={name}
-          maxLength={256}
-        />
-        <TextInput
-          style={styles.input}
-          onChangeText={onEmailChange}
-          value={email}
-          placeholder="test@test.com"
-          keyboardType="email-address"
-          maxLength={256}
-          autoCapitalize="characters"
-        />
-        <TextInput
-          style={styles.input}
-          onChangeText={onBirthdateChange}
-          placeholder="Date de naissance"
-          value={birthdate}
-          maxLength={256}
-        />
-        <TextInput
-          style={styles.input}
-          onChangeText={onAddressChange}
-          placeholder="Date de naissance"
-          value={address}
-          maxLength={256}
-        />
+        <View>
+          <View>
+            <Text>Claire Massé</Text>
+            <Text>38 Cours Pasteur</Text>
+            <Text>33000 Bordeaux</Text>
+            <Text>+33 6 05 05 05 05</Text>
+            <Text>clairemasse@gmail.com</Text>
+          </View>
+          <View>
+            <TouchableOpacity>{/* <Image /> */}</TouchableOpacity>
+          </View>
+        </View>
+        <TouchableOpacity onPress={() => console.log('Hello')}>
+          <Text>Ajouter une adresse de facturation</Text>
+        </TouchableOpacity>
       </View>
 
       <View>
         <TouchableOpacity onPress={() => navigation.navigate('Paiement')}>
-          <Text>Suivant</Text>
+          <Text>Finaliser la commande</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -87,7 +74,7 @@ const styles = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
-    fontSize: 32,
+    fontSize: 20,
     marginBottom: 30,
   },
   buttonContainer: {

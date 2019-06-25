@@ -1,57 +1,64 @@
 [
   {
     "id": 87654,
-    "name": "Hello",
-    "image" : "https://media.intersport.fr/is/image/intersportfr/239574_LTK_Q1?$produit_l$",
-    "price": 30.50,
+    "name": "Maillot femme Équipe de France 2019",
+    "marque": "Nike",
+    "image": "https://media.intersport.fr/is/image/intersportfr/239574_LTK_Q1?$produit_l$",
+    "price": 30.5,
     "description": "C'est beaucoup tous ca quand meme",
     "supply": 3
   },
   {
     "id": 252345,
     "name": "Hello",
+    "marque": "Nike",
     "image": "https://media.intersport.fr/is/image/intersportfr/BV4777_37Z_Q1?$produit_l$",
-    "price": 30.50,
+    "price": 30.5,
     "description": "C'est beaucoup tous ca quand meme",
     "supply": 200
   },
   {
     "id": 345678,
     "name": "Hello",
+    "marque": "Nike",
     "image": "https://media.intersport.fr/is/image/intersportfr/273292_VXU_Q1?$produit_l$",
-    "price": 30.50,
+    "price": 30.5,
     "description": "C'est beaucoup tous ca quand meme",
     "supply": 200
   },
   {
     "id": 123456,
     "name": "Hello",
+    "marque": "Nike",
     "image": "https://media.intersport.fr/is/image/intersportfr/861778_394_Q1?$produit_l$",
-    "price": 30.50,
+    "price": 30.5,
     "description": "C'est beaucoup tous ca quand meme",
     "supply": 0
   },
   {
     "id": 543876,
     "name": "Hello",
+    "marque": "Nike",
     "image": "https://media.intersport.fr/is/image/intersportfr/Y8SUQ3_29K_PR?$produit_l$",
-    "price": 30.50,
+    "price": 30.5,
     "description": "C'est beaucoup tous ca quand meme",
     "supply": 200
   },
   {
     "id": 76543,
     "name": "Hello",
+    "marque": "Nike",
     "image": "https://media.intersport.fr/is/image/intersportfr/H8K2L__4K2_Q1?$produit_l$&$product_grey$",
-    "price": 30.50,
+    "price": 30.5,
     "description": "C'est beaucoup tous ca quand meme",
     "supply": 200
   },
   {
     "id": 132435465,
     "name": "Hello",
+    "marque": "Nike",
     "image": "https://media.intersport.fr/is/image/intersportfr/Y7SUKE_AIA_PR?$produit_l$",
-    "price": 30.50,
+    "price": 30.5,
     "description": "C'est beaucoup tous ca quand meme",
     "supply": 200
   }

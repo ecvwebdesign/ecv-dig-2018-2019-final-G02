@@ -16,6 +16,7 @@ import Informations from '../modules/account/scenes/Informations'
 import Bookmarks from '../modules/bookmarks/scenes/Bookmarks'
 import MarketScanner from '../modules/catalogue/scenes/MarketScanner'
 import ProductScanner from '../modules/catalogue/scenes/ProductScanner'
+import ProductAdvice from '../modules/catalogue/scenes/ProductAdvice'
 import Recap from '../modules/cart/scenes/Recap'
 import InqueriesInfos from '../modules/cart/scenes/InqueriesInfos'
 import Paiement from '../modules/cart/scenes/Paiement'
@@ -45,6 +46,21 @@ const CartStack = createStackNavigator(
   }
 )
 
+CartStack.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true
+  if (
+    getActiveRouteState(navigation.state).routeName === 'Recap'
+    || getActiveRouteState(navigation.state).routeName === 'InqueriesInfos'
+    || getActiveRouteState(navigation.state).routeName === 'Paiement'
+  ) {
+    tabBarVisible = false
+  }
+
+  return {
+    tabBarVisible,
+  }
+}
+
 const CatalogueStack = createStackNavigator(
   {
     Home: { screen: Home },
@@ -54,12 +70,12 @@ const CatalogueStack = createStackNavigator(
     ProductDetail: {
       screen: ProductDetail,
     },
-    ProductScanner: {
-      screen: ProductScanner,
+    ProductAdvice: {
+      screen: ProductAdvice,
     },
   },
   {
-    initialRouteName: 'ProductsCategorie',
+    initialRouteName: 'Home',
     mode: 'modal',
     headerMode: 'none',
   }
@@ -186,12 +202,39 @@ const RootStack = createStackNavigator(
     },
     MarketScanner: {
       screen: MarketScanner,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    ProductScanner: {
+      screen: ProductScanner,
+      navigationOptions: {
+        header: null,
+      },
     },
   },
   {
     initialRouteName: 'BottomTab',
-    headerMode: 'none',
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: 'transparent',
+      },
+      headerTintColor: '#fff',
+    },
   }
 )
+
+const getActiveRouteState = (route) => {
+  if (
+    !route.routes
+    || route.routes.length === 0
+    || route.index >= route.routes.length
+  ) {
+    return route
+  }
+
+  const childActiveRoute = route.routes[route.index]
+  return getActiveRouteState(childActiveRoute)
+}
 
 export default createAppContainer(RootStack)
