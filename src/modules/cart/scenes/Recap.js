@@ -10,6 +10,7 @@ import {
 import PropTypes from 'prop-types'
 import getImageSize from '../../../commons/utils/images'
 import CustomImage from '../../../commons/components/CustomImage'
+import OtherArticles from '../../catalogue/components/OtherArticles'
 
 const Recap = ({ navigation }) => {
   const aspectRatio = 150 / 150
@@ -25,49 +26,53 @@ const Recap = ({ navigation }) => {
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.header}>
-          <Text>{'<'}</Text>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text>←</Text>
+          </TouchableOpacity>
           <Text style={styles.titleHeader}>Panier</Text>
         </View>
-        <View>
-          <Text>Récapitulatif de la commande</Text>
-          <Text>2 articles</Text>
-        </View>
-        <View>
-          <View>
+        <Text style={styles.title}>Récapitulatif de la commande</Text>
+        <Text style={styles.subTitle}>2 articles</Text>
+        <View style={styles.product}>
+          <View style={styles.productHeader}>
             <View>
               <Text>NIKE</Text>
-              <TouchableOpacity>
-                <Text>X</Text>
-              </TouchableOpacity>
+              <Text>Chaussures de tennis femme</Text>
+              <Text>54</Text>
             </View>
-            <Text>Chaussures de tennis femme</Text>
-            <Text>54</Text>
+            <TouchableOpacity>
+              <Text>X</Text>
+            </TouchableOpacity>
           </View>
           <View>
-            <Image
-              style={{ width: 75, height: 75 }}
-              source={{
-                uri:
-                  'https://media.intersport.fr/is/image/intersportfr/861778_394_Q1?$produit_l$',
-              }}
-            />
-            <View>
-              <Text>Réf</Text>
-              <Text>Couleur</Text>
-              <Text>Taille</Text>
-              <Text>Total</Text>
+            <View style={styles.descContainer}>
+              <Image
+                style={{ width: 75, height: 75 }}
+                source={{
+                  uri:
+                    'https://media.intersport.fr/is/image/intersportfr/861778_394_Q1?$produit_l$',
+                }}
+              />
+              <View style={styles.descLabel}>
+                <Text>Réf</Text>
+                <Text>Couleur</Text>
+                <Text>Taille</Text>
+                <Text>Total</Text>
+              </View>
+              <View style={styles.descInfos}>
+                <Text>84.50.48 / 261 36</Text>
+                <Text>Rose pastel</Text>
+                <Text>36</Text>
+                <Text>28,99 €</Text>
+              </View>
             </View>
-            <View>
-              <Text>84.50.48 / 261 36 28,99 €</Text>
-              <Text>Rose pastel</Text>
-              <Text>36</Text>
-              <Text>28,99 €</Text>
-            </View>
-            <View>
-              <Text>Quantité: 2</Text>
-              <TouchableOpacity>
+            <View style={styles.productAction}>
+              <View>
+                <Text>Qté. 2</Text>
+              </View>
+              <TouchableOpacity style={styles.productFav}>
                 <Image
-                  style={{ width: 20, height: 20 }}
+                  style={{ width: 20, height: 17 }}
                   source={require('../../../commons/assets/images/heart.png')}
                 />
                 <Text>Ajouter au favoris</Text>
@@ -75,42 +80,46 @@ const Recap = ({ navigation }) => {
             </View>
           </View>
         </View>
-        <View>
-          <View>
+        <View style={styles.product}>
+          <View style={styles.productHeader}>
             <View>
               <Text>NIKE</Text>
-              <TouchableOpacity>
-                <Text>X</Text>
-              </TouchableOpacity>
+              <Text>Chaussures de tennis femme</Text>
+              <Text>54</Text>
             </View>
-            <Text>Chaussures de tennis femme</Text>
-            <Text>54</Text>
+            <TouchableOpacity>
+              <Text>X</Text>
+            </TouchableOpacity>
           </View>
           <View>
-            <Image
-              style={{ width: 75, height: 75 }}
-              source={{
-                uri:
-                  'https://media.intersport.fr/is/image/intersportfr/861778_394_Q1?$produit_l$',
-              }}
-            />
-            <View>
-              <Text>Réf</Text>
-              <Text>Couleur</Text>
-              <Text>Taille</Text>
-              <Text>Total</Text>
+            <View style={styles.descContainer}>
+              <Image
+                style={{ width: 75, height: 75 }}
+                source={{
+                  uri:
+                    'https://media.intersport.fr/is/image/intersportfr/861778_394_Q1?$produit_l$',
+                }}
+              />
+              <View style={styles.descLabel}>
+                <Text>Réf</Text>
+                <Text>Couleur</Text>
+                <Text>Taille</Text>
+                <Text>Total</Text>
+              </View>
+              <View style={styles.descInfos}>
+                <Text>84.50.48 / 261 36</Text>
+                <Text>Rose pastel</Text>
+                <Text>36</Text>
+                <Text>28,99 €</Text>
+              </View>
             </View>
-            <View>
-              <Text>84.50.48 / 261 36 28,99 €</Text>
-              <Text>Rose pastel</Text>
-              <Text>36</Text>
-              <Text>28,99 €</Text>
-            </View>
-            <View>
-              <Text>Quantité: 2</Text>
-              <TouchableOpacity>
+            <View style={styles.productAction}>
+              <View>
+                <Text>Qté. 2</Text>
+              </View>
+              <TouchableOpacity style={styles.productFav}>
                 <Image
-                  style={{ width: 20, height: 20 }}
+                  style={{ width: 20, height: 17 }}
                   source={require('../../../commons/assets/images/heart.png')}
                 />
                 <Text>Ajouter au favoris</Text>
@@ -168,44 +177,9 @@ const Recap = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
-      <View>
-        <Text>Complétez avec vos favoris</Text>
-        <View style={styles.productContainer}>
-          <TouchableOpacity onPress={() => handleProductPress('543876')}>
-            <View>
-              <CustomImage
-                source={{
-                  uri:
-                    'https://media.intersport.fr/is/image/intersportfr/861778_394_Q1?$produit_l$',
-                }}
-                width={imageSizes.width / 2}
-                height={imageSizes.height / 2}
-              />
-              <View style={styles.textContainer}>
-                <Text>MARQUE</Text>
-                <Text>Hello</Text>
-                <Text>200</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => handleProductPress('543876')}>
-            <View>
-              <CustomImage
-                source={{
-                  uri:
-                    'https://media.intersport.fr/is/image/intersportfr/861778_394_Q1?$produit_l$',
-                }}
-                width={imageSizes.width / 2}
-                height={imageSizes.height / 2}
-              />
-              <View style={styles.textContainer}>
-                <Text>MARQUE</Text>
-                <Text>Hello</Text>
-                <Text>200</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
-        </View>
+      <View style={styles.otherArticles}>
+        <Text style={styles.infosHeaderText}>Articles Complémentaire</Text>
+        <OtherArticles navigation={navigation} />
       </View>
     </ScrollView>
   )
@@ -221,32 +195,52 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 5,
   },
   titleHeader: {
-    fontSize: 22,
+    fontSize: 20,
+    marginHorizontal: 10,
   },
   title: {
-    textAlign: 'center',
-    fontSize: 22,
+    fontSize: 20,
+    marginTop: 20,
+    fontWeight: 'bold',
+  },
+  subTitle: {
+    fontSize: 20,
     marginBottom: 30,
   },
-  buttonContainer: {
+  product: {
     marginVertical: 10,
+    padding: 15,
+    backgroundColor: 'grey',
+  },
+  productHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: 10,
+  },
+  descContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  descLabel: {
+    width: 80,
+    marginLeft: 10,
+  },
+  productAction: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginVertical: 5,
+  },
+  productFav: {
     flexDirection: 'row',
     justifyContent: 'center',
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#000000',
-    borderRadius: 3,
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    marginVertical: 10,
-  },
-  productContainer: {
-    width: '46%',
-    marginHorizontal: '1%',
-    marginVertical: 10,
+    alignItems: 'center',
   },
   textContainer: {
     paddingLeft: 5,
@@ -254,6 +248,14 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
+  },
+  otherArticles: {
+    marginVertical: 20,
+    marginHorizontal: 15,
+  },
+  infosHeaderText: {
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 })
 

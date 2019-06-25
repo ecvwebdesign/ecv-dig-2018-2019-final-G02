@@ -12,6 +12,7 @@ import PropTypes from 'prop-types'
 import products from '../../../commons/utils/fakeData.json'
 import Loader from '../../../commons/components/Loader'
 import getImageSize from '../../../commons/utils/images'
+import OtherArticles from '../components/OtherArticles'
 
 const ProductDetail = ({ navigation }) => {
   const [product, setProduct] = useState(null)
@@ -121,34 +122,75 @@ const ProductDetail = ({ navigation }) => {
                   consequat.
                 </Text>
               </View>
-              <View>
+              <TouchableOpacity style={styles.seeMore}>
+                <Text style={styles.seeMoreText}>Voir plus </Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.infosContainer}>
+              <View style={styles.infosHeader}>
+                <Text style={styles.infosHeaderText}>Guide des tailles</Text>
                 <TouchableOpacity>
-                  <Text>Voir plus </Text>
+                  <Text>-</Text>
                 </TouchableOpacity>
               </View>
+              <View style={styles.sizeList}>
+                <TouchableOpacity style={styles.sizeButton}>
+                  <Text>XS</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.sizeButton}>
+                  <Text>S</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.sizeButton}>
+                  <Text>M</Text>
+                </TouchableOpacity>
+              </View>
+              <Text>Correspondance tour de poitrine: 85cm</Text>
+              <TouchableOpacity style={styles.sizeGuide}>
+                <Text style={styles.underline}>Quelle taille choisir</Text>
+              </TouchableOpacity>
             </View>
-            <View>
-              <View>
-                <Text>Guide des tailler</Text>
+            <View style={styles.infosContainer}>
+              <View style={styles.infosHeader}>
+                <Text style={styles.infosHeaderText}>Informations produit</Text>
                 <TouchableOpacity>
                   <Text>-</Text>
                 </TouchableOpacity>
               </View>
               <View>
+                <Text>
+                  • La technologie Dri-FIT vous aide à rester au sec et au
+                  frais.
+                </Text>
+                <Text>
+                  • Le tissu Nike Breathe est léger pour plus de fraîcheur.
+                </Text>
+                <Text>
+                  • La coupe ajustée épouse les formes de votre corps sans
+                  limiter les mouvements.
+                </Text>
+              </View>
+              <View>
+                <Text>Couleur</Text>
+              </View>
+            </View>
+            <View style={styles.infosContainer}>
+              <View style={styles.infosHeader}>
+                <Text style={styles.infosHeaderText}>Livraison et retour</Text>
                 <TouchableOpacity>
-                  <Text>XS</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <Text>S</Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                  <Text>M</Text>
+                  <Text>-</Text>
                 </TouchableOpacity>
               </View>
-              <Text>Correspondance tour de poitrine: 85cm</Text>
-              <TouchableOpacity>
-                <Text>Quelle taille choisir</Text>
-              </TouchableOpacity>
+              <View>
+                <Text>Retrait en magasin</Text>
+                <Text>Gratuit</Text>
+                <Text>Disponible en 48h</Text>
+              </View>
+            </View>
+            <View style={styles.otherArticles}>
+              <Text style={styles.infosHeaderText}>
+                Articles Complémentaire
+              </Text>
+              <OtherArticles navigation={navigation} />
             </View>
           </View>
         ) : (
@@ -215,29 +257,92 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
+    borderWidth: 1,
+    borderColor: 'grey',
+    paddingVertical: 5,
   },
   iconOne: {
     width: 30,
     height: 27,
   },
   iconTwo: {
-    width: 23,
-    height: 30,
+    width: 18,
+    height: 23,
     marginHorizontal: 5,
   },
   advicesHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginVertical: 5,
   },
   adviceContainer: {
     backgroundColor: 'grey',
-    padding: 10,
+    padding: 15,
+    marginVertical: 10,
+    borderTopWidth: 1,
+    borderColor: 'grey',
   },
   adviceHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: 5,
+  },
+  seeMore: {
+    width: '100%',
+    marginVertical: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
     alignItems: 'center',
+  },
+  seeMoreText: {
+    textDecorationLine: 'underline',
+  },
+  infosContainer: {
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: 'grey',
+    paddingVertical: 20,
+  },
+  infosHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginVertical: 10,
+  },
+  infosHeaderText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  sizeList: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+  },
+  sizeButton: {
+    width: 60,
+    borderWidth: 1,
+    borderColor: 'grey',
+    borderRadius: 50,
+    margin: 5,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 8,
+  },
+  sizeGuide: {
+    marginVertical: 10,
+    textDecorationLine: 'underline',
+    fontSize: 14,
+  },
+  underline: {
+    textDecorationLine: 'underline',
+    paddingVertical: 5,
+  },
+  otherArticles: {
+    marginVertical: 20,
   },
 })
 
