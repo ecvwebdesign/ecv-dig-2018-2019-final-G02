@@ -42,7 +42,6 @@ const CartStack = createStackNavigator(
   {
     initialRouteName: 'Recap',
     mode: 'modal',
-    headerMode: 'none',
   }
 )
 
@@ -83,49 +82,49 @@ const CatalogueStack = createStackNavigator(
 
 const BottomTabStack = createBottomTabNavigator(
   {
-    Catalogue: CatalogueStack,
-    Bookmarks: { screen: Bookmarks },
-    Sales: { screen: PrivateSales },
-    Account: AccountStack,
-    Cart: CartStack,
+    Accueil: CatalogueStack,
+    Favoris: { screen: Bookmarks },
+    'Ventes privées': { screen: PrivateSales },
+    Compte: AccountStack,
+    Panier: CartStack,
   },
   {
-    initialRouteName: 'Catalogue',
+    initialRouteName: 'Accueil',
     mode: 'modal',
     defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused }) => {
         const { routeName } = navigation.state
         let iconSource
         switch (routeName) {
-          case 'Catalogue':
+          case 'Accueil':
             if (focused) {
               iconSource = require('../commons/assets/images/home-full.png')
             } else {
               iconSource = require('../commons/assets/images/home.png')
             }
             break
-          case 'Bookmarks':
+          case 'Favoris':
             if (focused) {
               iconSource = require('../commons/assets/images/heart-full.png')
             } else {
               iconSource = require('../commons/assets/images/heart.png')
             }
             break
-          case 'Scanner':
+          case 'Ventes privées':
             if (focused) {
               iconSource = require('../commons/assets/images/promo-full.png')
             } else {
               iconSource = require('../commons/assets/images/promo.png')
             }
             break
-          case 'Account':
+          case 'Compte':
             if (focused) {
               iconSource = require('../commons/assets/images/user-full.png')
             } else {
               iconSource = require('../commons/assets/images/user.png')
             }
             break
-          case 'Cart':
+          case 'Panier':
             if (focused) {
               iconSource = require('../commons/assets/images/bag-full.png')
             } else {
@@ -156,8 +155,8 @@ const BottomTabStack = createBottomTabNavigator(
       },
     }),
     tabBarOptions: {
-      activeTintColor: '#BC2342',
-      inactiveTintColor: '#262626',
+      activeTintColor: '#164194',
+      inactiveTintColor: '#242A48',
       style: {
         height: 60,
         paddingVertical: 5,
