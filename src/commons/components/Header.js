@@ -12,7 +12,6 @@ const Header = (props) => {
       <View style={styles.item}>
         <TouchableOpacity onPress={() => navigation.navigate('Home')}>
           <Image
-
             source={require('../assets/images/logo-intersport.png')}
             style={styles.logo}
             resizeMode="contain"
@@ -20,8 +19,29 @@ const Header = (props) => {
         </TouchableOpacity>
       </View>
       <View style={styles.item}>
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-          <Text>Bordeaux</Text>
+        <TouchableOpacity
+          style={{ flexDirection: 'row' }}
+          onPress={() => navigation.navigate('Home')}
+        >
+          <Image
+            style={{ width: 12, height: 16, marginHorizontal: 5 }}
+            source={require('../assets/images/localisation.png')}
+          />
+          <View>
+            <Text
+              style={{
+                color: '#164194',
+                textDecorationLine: 'underline',
+                fontSize: 14,
+                fontWeight: 'bold',
+              }}
+            >
+              Bordeaux - Pessac
+            </Text>
+            <Text style={{ color: '#164194', fontSize: 14 }}>
+              09:30 - 19:30
+            </Text>
+          </View>
         </TouchableOpacity>
       </View>
     </View>

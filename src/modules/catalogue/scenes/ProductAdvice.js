@@ -53,7 +53,7 @@ const ProductDetail = ({ navigation }) => {
                   <TouchableOpacity style={styles.iconButton}>
                     <Image
                       style={styles.iconOne}
-                      source={require('../../../commons/assets/images/heart.png')}
+                      source={require('../../../commons/assets/images/like.png')}
                     />
                   </TouchableOpacity>
                 </View>
@@ -62,7 +62,7 @@ const ProductDetail = ({ navigation }) => {
             <TouchableOpacity style={styles.homeDelivery}>
               <Image
                 style={styles.iconTwo}
-                source={require('../../../commons/assets/images/bag.png')}
+                source={require('../../../commons/assets/images/cart.png')}
               />
               <Text style={styles.homeDeliveryText}>
                 Me faire livrer chez moi
@@ -85,7 +85,7 @@ const ProductDetail = ({ navigation }) => {
                   <View style={styles.scoreCont}>
                     <Image
                       style={{ width: 15, height: 15 }}
-                      source={require('../../../commons/assets/images/heart.png')}
+                      source={require('../../../commons/assets/images/like.png')}
                     />
                     <Text style={styles.score}>Satisfait</Text>
                   </View>
@@ -106,7 +106,7 @@ const ProductDetail = ({ navigation }) => {
                   <View style={styles.scoreCont}>
                     <Image
                       style={{ width: 15, height: 15 }}
-                      source={require('../../../commons/assets/images/heart.png')}
+                      source={require('../../../commons/assets/images/like.png')}
                     />
                     <Text style={styles.score}>Satisfait</Text>
                   </View>
@@ -127,7 +127,7 @@ const ProductDetail = ({ navigation }) => {
                   <View style={styles.scoreCont}>
                     <Image
                       style={{ width: 15, height: 15 }}
-                      source={require('../../../commons/assets/images/heart.png')}
+                      source={require('../../../commons/assets/images/like.png')}
                     />
                     <Text style={styles.score}>Satisfait</Text>
                   </View>

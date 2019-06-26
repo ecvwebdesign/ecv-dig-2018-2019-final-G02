@@ -101,7 +101,7 @@ const Recap = ({ navigation }) => {
               <TouchableOpacity style={styles.favButton}>
                 <Image
                   style={{ width: 20, height: 18 }}
-                  source={require('../../../commons/assets/images/heart.png')}
+                  source={require('../../../commons/assets/images/like.png')}
                 />
                 <Text style={styles.favText}>Ajouter au favoris</Text>
               </TouchableOpacity>
@@ -150,7 +150,7 @@ const Recap = ({ navigation }) => {
               <TouchableOpacity style={styles.favButton}>
                 <Image
                   style={{ width: 20, height: 18 }}
-                  source={require('../../../commons/assets/images/heart.png')}
+                  source={require('../../../commons/assets/images/like.png')}
                 />
                 <Text style={styles.favText}>Ajouter au favoris</Text>
               </TouchableOpacity>

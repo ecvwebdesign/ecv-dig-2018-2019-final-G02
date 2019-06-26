@@ -51,23 +51,31 @@ const ProductDetail = ({ navigation }) => {
                 <View style={styles.iconContainer}>
                   <TouchableOpacity style={styles.iconButton}>
                     <Image
-                      style={styles.iconOne}
-                      source={require('../../../commons/assets/images/heart.png')}
+                      style={{ width: 45, height: 45 }}
+                      source={require('../../../commons/assets/images/like_btn_full.png')}
                     />
                   </TouchableOpacity>
                   <TouchableOpacity style={styles.iconButton}>
                     <Image
-                      style={styles.iconTwo}
-                      source={require('../../../commons/assets/images/bag.png')}
+                      style={{ width: 45, height: 45 }}
+                      source={require('../../../commons/assets/images/panier_btn_vide.png')}
                     />
                   </TouchableOpacity>
                 </View>
               </ImageBackground>
             </View>
             <TouchableOpacity style={styles.seeMore}>
+              <Image
+                style={{ width: 20, height: 20, marginHorizontal: 5 }}
+                source={require('../../../commons/assets/images/more.png')}
+              />
               <Text style={styles.seeMoreText}>Infos sur le produit</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.localization}>
+              <Image
+                style={{ width: 10, height: 14, marginHorizontal: 5 }}
+                source={require('../../../commons/assets/images/localisation.png')}
+              />
               <Text style={styles.localizationText}>
                 Localiser dans mon magasin
               </Text>
@@ -143,7 +151,7 @@ const ProductDetail = ({ navigation }) => {
             <View style={styles.supplyContainer}>
               <Text style={styles.marketText}>Réserver en magasin :</Text>
               <View style={styles.bookProduct}>
-                <View>
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                   {/* <Image /> */}
                   <Text style={styles.supplyWarning}>Indisponible</Text>
                 </View>
@@ -153,8 +161,11 @@ const ProductDetail = ({ navigation }) => {
             <View style={styles.supplyContainer}>
               <Text style={styles.marketText}>Retrait en magasin :</Text>
               <View style={styles.bookProduct}>
-                <View>
-                  {/* <Image /> */}
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                  <Image
+                    style={{ width: 16, height: 19 }}
+                    source={require('../../../commons/assets/images/cart.png')}
+                  />
                   <Text style={styles.supplyValidate}>Disponible</Text>
                 </View>
                 <Text style={styles.free}>Gratuit</Text>
@@ -164,8 +175,8 @@ const ProductDetail = ({ navigation }) => {
               <Text style={styles.marketText}>Livraison à domicile :</Text>
               <View style={styles.deliveryProduct}>
                 <Image
-                  style={{ width: 16, height: 22 }}
-                  source={require('../../../commons/assets/images/bag.png')}
+                  style={{ width: 16, height: 20 }}
+                  source={require('../../../commons/assets/images/cart.png')}
                 />
                 <View style={styles.deliveryInfos}>
                   <Text style={styles.deliveryText}>
@@ -181,8 +192,8 @@ const ProductDetail = ({ navigation }) => {
               <Text style={styles.marketText}>Livraison en point relais :</Text>
               <View style={styles.deliveryProduct}>
                 <Image
-                  style={{ width: 16, height: 22 }}
-                  source={require('../../../commons/assets/images/bag.png')}
+                  style={{ width: 16, height: 20 }}
+                  source={require('../../../commons/assets/images/cart.png')}
                 />
                 <View style={styles.deliveryInfos}>
                   <Text style={styles.deliveryText}>
@@ -273,14 +284,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  iconOne: {
-    width: 30,
-    height: 27,
-  },
-  iconTwo: {
-    width: 23,
-    height: 30,
   },
   seeMore: {
     width: '100%',

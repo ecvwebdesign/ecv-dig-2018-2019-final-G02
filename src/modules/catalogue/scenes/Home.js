@@ -22,33 +22,44 @@ const Home = ({ navigation }) => {
       <View style={styles.container}>
         <View style={styles.marketModeContainer}>
           <TouchableOpacity
+            style={styles.marketModeButton}
             onPress={() => navigation.navigate('MarketScanner')}
           >
-            <Text style={styles.marketModeTitle}>Activer le mode magasin</Text>
-            <Text>
-              L’application s’adapte à votre magasin et à vos préférences
-            </Text>
+            <Image
+              style={{ width: 20, height: 14, marginTop: 5 }}
+              source={require('../../../commons/assets/images/camera.png')}
+            />
+            <View style={{ marginHorizontal: 5 }}>
+              <Text style={styles.marketModeTitle}>
+                Activer le mode magasin
+              </Text>
+              <Text style={styles.marketModeSubtitle}>
+                L’application s’adapte à votre magasin et à vos préférences
+              </Text>
+            </View>
           </TouchableOpacity>
         </View>
         <View style={styles.searchContainer}>
-          <Image
-            style={{ width: 15, height: 15 }}
-            source={require('../../../commons/assets/images/search-icon.png')}
-          />
-          <TextInput
-            style={styles.input}
-            onChangeText={onSearchChange}
-            value={search}
-            placeholder="Taper votre recherche..."
-            maxLength={256}
-          />
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Image
+              style={{ width: 15, height: 15 }}
+              source={require('../../../commons/assets/images/search-icon.png')}
+            />
+            <TextInput
+              style={styles.input}
+              onChangeText={onSearchChange}
+              value={search}
+              placeholder="Taper votre recherche..."
+              maxLength={256}
+            />
+          </View>
           <View>
             <TouchableOpacity
               onPress={() => navigation.navigate('ProductScanner')}
             >
               <Image
                 style={styles.barcode}
-                source={require('../../../commons/assets/images/barcode.png')}
+                source={require('../../../commons/assets/images/codebarre.png')}
               />
             </TouchableOpacity>
           </View>
@@ -66,7 +77,7 @@ const Home = ({ navigation }) => {
               style={styles.buttonWrapper}
               onPress={() => navigation.navigate('ProductsCategorie')}
             >
-              <Text>Sport</Text>
+              <Text style={styles.categorieText}>Sport</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.halfContainerRight}>
@@ -74,42 +85,106 @@ const Home = ({ navigation }) => {
               style={styles.buttonWrapper}
               onPress={() => navigation.navigate('ProductsCategorie')}
             >
-              <Text>Marques</Text>
+              <Text style={styles.categorieText}>Marques</Text>
             </TouchableOpacity>
           </View>
         </View>
         <View style={styles.categorieContainer}>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity onPress={() => navigation.navigate('Sales')}>
-              <Text>Femmes</Text>
+            <TouchableOpacity
+              style={styles.categorie}
+              onPress={() => navigation.navigate('ProductsCategorie')}
+            >
+              <View style={styles.fakeImage} />
+              <View style={styles.half}>
+                <Text style={styles.categorieName}>Femme</Text>
+                <TouchableOpacity style={styles.subCategorie}>
+                  <Text style={styles.subCategorieText}>Textile</Text>
+                  <Image
+                    style={{ width: 6, height: 10 }}
+                    source={require('../../../commons/assets/images/droite.png')}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.subCategorie}>
+                  <Text style={styles.subCategorieText}>Chaussures</Text>
+                  <Image
+                    style={{ width: 6, height: 10 }}
+                    source={require('../../../commons/assets/images/droite.png')}
+                  />
+                </TouchableOpacity>
+              </View>
             </TouchableOpacity>
           </View>
         </View>
         <View style={styles.categorieContainer}>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity onPress={() => navigation.navigate('Sales')}>
-              <Text>Hommes</Text>
+            <TouchableOpacity
+              style={styles.categorie}
+              onPress={() => navigation.navigate('ProductsCategorie')}
+            >
+              <View style={styles.fakeImage} />
+              <View style={styles.half}>
+                <Text style={styles.categorieName}>Homme</Text>
+                <TouchableOpacity style={styles.subCategorie}>
+                  <Text style={styles.subCategorieText}>Textile</Text>
+                  <Image
+                    style={{ width: 6, height: 10 }}
+                    source={require('../../../commons/assets/images/droite.png')}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.subCategorie}>
+                  <Text style={styles.subCategorieText}>Chaussures</Text>
+                  <Image
+                    style={{ width: 6, height: 10 }}
+                    source={require('../../../commons/assets/images/droite.png')}
+                  />
+                </TouchableOpacity>
+              </View>
             </TouchableOpacity>
           </View>
         </View>
         <View style={styles.categorieContainer}>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity onPress={() => navigation.navigate('Sales')}>
-              <Text>Enfants</Text>
+            <TouchableOpacity
+              style={styles.categorie}
+              onPress={() => navigation.navigate('ProductsCategorie')}
+            >
+              <View style={styles.fakeImage} />
+              <View style={styles.half}>
+                <Text style={styles.categorieName}>Enfant</Text>
+                <TouchableOpacity style={styles.subCategorie}>
+                  <Text style={styles.subCategorieText}>Textile</Text>
+                  <Image
+                    style={{ width: 6, height: 10 }}
+                    source={require('../../../commons/assets/images/droite.png')}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.subCategorie}>
+                  <Text style={styles.subCategorieText}>Chaussures</Text>
+                  <Image
+                    style={{ width: 6, height: 10 }}
+                    source={require('../../../commons/assets/images/droite.png')}
+                  />
+                </TouchableOpacity>
+              </View>
             </TouchableOpacity>
           </View>
         </View>
         <View style={styles.categorieContainer}>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity onPress={() => navigation.navigate('Sales')}>
-              <Text>Vélos</Text>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('ProductsCategorie')}
+            >
+              <Text style={styles.categorieText}>Vélos, VTT, VTC</Text>
             </TouchableOpacity>
           </View>
         </View>
         <View style={styles.categorieContainer}>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity onPress={() => navigation.navigate('Sales')}>
-              <Text>Matériels Volumineux</Text>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('ProductsCategorie')}
+            >
+              <Text style={styles.categorieText}>Matériels volumineux</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -117,10 +192,10 @@ const Home = ({ navigation }) => {
           <Text style={styles.rsTitle}>Suivez nos aventures</Text>
           <View style={styles.rsContainer}>
             <TouchableOpacity style={styles.rsButton}>
-              <Text>Facebook</Text>
+              <Text style={styles.rsText}>Facebook</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.rsButton}>
-              <Text>Instagram</Text>
+              <Text style={styles.rsText}>Instagram</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -140,17 +215,40 @@ const styles = StyleSheet.create({
   },
   marketModeContainer: {
     marginVertical: 5,
-    backgroundColor: 'grey',
-    padding: 10,
+    backgroundColor: '#164194',
+    borderRadius: 8,
+    padding: 15,
+  },
+  marketModeButton: {
+    flexDirection: 'row',
   },
   marketModeTitle: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: '#FFFFFF',
+  },
+  marketModeSubtitle: {
+    fontSize: 12,
+    color: '#FFFFFF',
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#000000',
+    marginVertical: 20,
+    paddingHorizontal: 10,
+    backgroundColor: '#F7F7F7',
+  },
+  barcode: {
+    width: 30,
+    height: 20,
   },
   categorieContainer: {
     flexDirection: 'row',
     width: '100%',
-    height: 80,
+    height: 160,
     justifyContent: 'space-between',
     alignItems: 'center',
     marginVertical: 10,
@@ -161,8 +259,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#222222',
   },
   halfContainerLeft: {
     width: '48%',
@@ -190,21 +286,42 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#164194',
   },
-  input: {},
-  searchContainer: {
+  categorie: {
+    flexDirection: 'row',
+    height: '100%',
+  },
+  fakeImage: {
+    width: '50%',
+    height: '100%',
+    backgroundColor: 'green',
+  },
+  half: {
+    width: '50%',
+    padding: 25,
+    backgroundColor: '#164194',
+  },
+  categorieText: {
+    color: '#FFFFFF',
+    fontSize: 18,
+  },
+  categorieName: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  subCategorie: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#000000',
-    marginVertical: 20,
-    paddingHorizontal: 10,
   },
-  barcode: {
-    width: 30,
-    height: 20,
+  subCategorieText: {
+    color: '#FFFFFF',
+    textDecorationLine: 'underline',
+    fontSize: 14,
   },
+  input: {},
   rsContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -215,9 +332,15 @@ const styles = StyleSheet.create({
   },
   rsTitle: {
     textAlign: 'center',
-    fontSize: 25,
+    fontSize: 22,
     marginBottom: 10,
     marginTop: 30,
+    color: '#164194',
+  },
+  rsText: {
+    color: '#164194',
+    textDecorationLine: 'underline',
+    fontSize: 18,
   },
 })
 

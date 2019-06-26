@@ -94,53 +94,51 @@ const BottomTabStack = createBottomTabNavigator(
         switch (routeName) {
           case 'Accueil':
             if (focused) {
-              iconSource = require('../commons/assets/images/home-full.png')
+              iconSource = require('../commons/assets/images/home_full.png')
             } else {
               iconSource = require('../commons/assets/images/home.png')
             }
             break
           case 'Favoris':
             if (focused) {
-              iconSource = require('../commons/assets/images/heart-full.png')
+              iconSource = require('../commons/assets/images/like_full.png')
             } else {
-              iconSource = require('../commons/assets/images/heart.png')
+              iconSource = require('../commons/assets/images/like.png')
             }
             break
           case 'Ventes privées':
             if (focused) {
-              iconSource = require('../commons/assets/images/promo-full.png')
+              iconSource = require('../commons/assets/images/ventes_full.png')
             } else {
-              iconSource = require('../commons/assets/images/promo.png')
+              iconSource = require('../commons/assets/images/ventes.png')
             }
             break
           case 'Compte':
             if (focused) {
-              iconSource = require('../commons/assets/images/user-full.png')
+              iconSource = require('../commons/assets/images/user_full.png')
             } else {
-              iconSource = require('../commons/assets/images/user.png')
+              iconSource = require('../commons/assets/images/user_vide.png')
             }
             break
           case 'Panier':
             if (focused) {
-              iconSource = require('../commons/assets/images/bag-full.png')
+              iconSource = require('../commons/assets/images/cart.png')
             } else {
-              iconSource = require('../commons/assets/images/bag.png')
+              iconSource = require('../commons/assets/images/cart.png')
             }
             break
           default:
             break
         }
-        // If (routeName === 'Scanner') {
-        //   return (
-        //     <View style={{ width: 20, height: 20, backgroundColor: 'grey' }}>
-        //       <Image
-        //         source={iconSource}
-        //         style={{ width: 50, marginBottom: 50 }}
-        //         resizeMode="contain"
-        //       />
-        //     </View>
-        //   )
-        // }
+        if (routeName === 'Ventes privées') {
+          return (
+            <Image
+              source={iconSource}
+              style={{ width: 50, marginBottom: 40 }}
+              resizeMode="contain"
+            />
+          )
+        }
         return (
           <Image
             source={iconSource}
@@ -157,6 +155,8 @@ const BottomTabStack = createBottomTabNavigator(
         height: 60,
         paddingVertical: 5,
         backgroundColor: '#fff',
+        borderTopWidth: 1,
+        borderColor: '#174195',
       },
       labelStyle: {
         fontSize: 12,
