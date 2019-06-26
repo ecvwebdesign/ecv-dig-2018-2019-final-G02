@@ -64,132 +64,198 @@ const ProductDetail = ({ navigation }) => {
                 style={styles.iconTwo}
                 source={require('../../../commons/assets/images/bag.png')}
               />
-              <Text>Me faire livrer chez moi</Text>
+              <Text style={styles.homeDeliveryText}>
+                Me faire livrer chez moi
+              </Text>
             </TouchableOpacity>
-            <View>
-              <View style={styles.advicesHeader}>
-                <Text>Avis Clients</Text>
-                <Text>Stars</Text>
+            <View style={styles.blockContainer}>
+              <View style={styles.blockHeader}>
+                <View style={styles.advicesTitle}>
+                  <Text style={styles.blockTitle}>Avis Clients</Text>
+                  <Text style={styles.advicesAverage}>4,6/5</Text>
+                </View>
                 <TouchableOpacity>
-                  <Text>-</Text>
+                  <Text style={styles.minify}>-</Text>
                 </TouchableOpacity>
               </View>
               <View style={styles.adviceContainer}>
+                <Text style={styles.adviceDate}>17/05/2019</Text>
                 <View style={styles.adviceHeader}>
-                  <View>
-                    <Text>Name Surname</Text>
-                    <Text>Date</Text>
+                  <Text style={styles.adviceName}>Name Surname</Text>
+                  <View style={styles.scoreCont}>
+                    <Image
+                      style={{ width: 15, height: 15 }}
+                      source={require('../../../commons/assets/images/heart.png')}
+                    />
+                    <Text style={styles.score}>Satisfait</Text>
                   </View>
-                  <Text>Stars</Text>
                 </View>
-                <Text>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut ero labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                  ullamco poriti laboris nisi ut aliquip ex ea commodo
-                  consequat.
+                <Text style={styles.adviceText}>
+                  Joli maillot. Produit bien fini, agréable à porter et qui fait
+                  son effet.
                 </Text>
+                <Text style={styles.benefitsTitle}>+ Points forts</Text>
+                <Text style={styles.benefits}>Agréables à porter</Text>
+                <Text style={styles.consTitle}>- Points faibles</Text>
+                <Text style={styles.cons}>Prix toujours trop cher</Text>
               </View>
               <View style={styles.adviceContainer}>
+                <Text style={styles.adviceDate}>17/05/2019</Text>
                 <View style={styles.adviceHeader}>
-                  <View>
-                    <Text>Name Surname</Text>
-                    <Text>Date</Text>
+                  <Text style={styles.adviceName}>Name Surname</Text>
+                  <View style={styles.scoreCont}>
+                    <Image
+                      style={{ width: 15, height: 15 }}
+                      source={require('../../../commons/assets/images/heart.png')}
+                    />
+                    <Text style={styles.score}>Satisfait</Text>
                   </View>
-                  <Text>Stars</Text>
                 </View>
-                <Text>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut ero labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                  ullamco poriti laboris nisi ut aliquip ex ea commodo
-                  consequat.
+                <Text style={styles.adviceText}>
+                  Joli maillot. Produit bien fini, agréable à porter et qui fait
+                  son effet.
                 </Text>
+                <Text style={styles.benefitsTitle}>+ Points forts</Text>
+                <Text style={styles.benefits}>Agréables à porter</Text>
+                <Text style={styles.consTitle}>- Points faibles</Text>
+                <Text style={styles.cons}>Prix toujours trop cher</Text>
               </View>
               <View style={styles.adviceContainer}>
+                <Text style={styles.adviceDate}>17/05/2019</Text>
                 <View style={styles.adviceHeader}>
-                  <View>
-                    <Text>Name Surname</Text>
-                    <Text>Date</Text>
+                  <Text style={styles.adviceName}>Name Surname</Text>
+                  <View style={styles.scoreCont}>
+                    <Image
+                      style={{ width: 15, height: 15 }}
+                      source={require('../../../commons/assets/images/heart.png')}
+                    />
+                    <Text style={styles.score}>Satisfait</Text>
                   </View>
-                  <Text>Stars</Text>
                 </View>
-                <Text>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut ero labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                  ullamco poriti laboris nisi ut aliquip ex ea commodo
-                  consequat.
+                <Text style={styles.adviceText}>
+                  Joli maillot. Produit bien fini, agréable à porter et qui fait
+                  son effet.
                 </Text>
+                <Text style={styles.benefitsTitle}>+ Points forts</Text>
+                <Text style={styles.benefits}>Agréables à porter</Text>
+                <Text style={styles.consTitle}>- Points faibles</Text>
+                <Text style={styles.cons}>Prix toujours trop cher</Text>
               </View>
               <TouchableOpacity style={styles.seeMore}>
                 <Text style={styles.seeMoreText}>Voir plus </Text>
               </TouchableOpacity>
             </View>
-            <View style={styles.infosContainer}>
-              <View style={styles.infosHeader}>
-                <Text style={styles.infosHeaderText}>Guide des tailles</Text>
+            <View style={styles.blockContainer}>
+              <View style={styles.blockHeader}>
+                <Text style={styles.blockTitle}>Guide des tailles</Text>
                 <TouchableOpacity>
-                  <Text>-</Text>
+                  <Text style={styles.minify}>-</Text>
                 </TouchableOpacity>
               </View>
               <View style={styles.sizeList}>
-                <TouchableOpacity style={styles.sizeButton}>
-                  <Text>XS</Text>
+                <TouchableOpacity style={styles.sizeButtonActiv}>
+                  <Text style={styles.sizeButtonTextWhite}>XS</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.sizeButton}>
-                  <Text>S</Text>
+                  <Text style={styles.sizeButtonTextBlue}>S</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.sizeButton}>
-                  <Text>M</Text>
+                  <Text style={styles.sizeButtonTextBlue}>M</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.sizeButton}>
+                  <Text style={styles.sizeButtonTextBlue}>L</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.sizeButton}>
+                  <Text style={styles.sizeButtonTextBlue}>XL</Text>
                 </TouchableOpacity>
               </View>
-              <Text>Correspondance tour de poitrine: 85cm</Text>
+              <Text style={styles.sizeIndication}>
+                Correspondance tour de poitrine: 85cm
+              </Text>
               <TouchableOpacity style={styles.sizeGuide}>
-                <Text style={styles.underline}>Quelle taille choisir</Text>
+                <Image
+                  style={{ width: 22, height: 12 }}
+                  source={require('../../../commons/assets/images/home.png')}
+                />
+                <Text style={styles.sizeGuideText}>Quelle taille choisir</Text>
               </TouchableOpacity>
             </View>
-            <View style={styles.infosContainer}>
-              <View style={styles.infosHeader}>
-                <Text style={styles.infosHeaderText}>Informations produit</Text>
+            <View style={styles.blockContainer}>
+              <View style={styles.blockHeader}>
+                <Text style={styles.blockTitle}>Informations produit</Text>
                 <TouchableOpacity>
-                  <Text>-</Text>
+                  <Text style={styles.minify}>-</Text>
                 </TouchableOpacity>
               </View>
               <View>
-                <Text>
+                <Text style={styles.infosText}>
                   • La technologie Dri-FIT vous aide à rester au sec et au
                   frais.
                 </Text>
-                <Text>
+                <Text style={styles.infosText}>
                   • Le tissu Nike Breathe est léger pour plus de fraîcheur.
                 </Text>
-                <Text>
+                <Text style={styles.infosText}>
                   • La coupe ajustée épouse les formes de votre corps sans
                   limiter les mouvements.
                 </Text>
               </View>
-              <View>
-                <Text>Couleur</Text>
-              </View>
-            </View>
-            <View style={styles.infosContainer}>
-              <View style={styles.infosHeader}>
-                <Text style={styles.infosHeaderText}>Livraison et retour</Text>
-                <TouchableOpacity>
-                  <Text>-</Text>
+              <Text style={styles.colorsTitle}>Gamme de couleur</Text>
+              <View style={styles.colors}>
+                <TouchableOpacity style={styles.color}>
+                  <Image
+                    style={{ width: 50, height: 50 }}
+                    source={{
+                      uri:
+                        'https://media.intersport.fr/is/image/intersportfr/AJ4394_GRH_Q1?$produit_l$',
+                    }}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.color}>
+                  <Image
+                    style={{ width: 50, height: 50 }}
+                    source={{
+                      uri:
+                        'https://media.intersport.fr/is/image/intersportfr/AJ4394_GRH_Q1?$produit_l$',
+                    }}
+                  />
                 </TouchableOpacity>
               </View>
-              <View>
-                <Text>Retrait en magasin</Text>
-                <Text>Gratuit</Text>
-                <Text>Disponible en 48h</Text>
+            </View>
+            <View style={styles.blockContainer}>
+              <View style={styles.blockHeader}>
+                <Text style={styles.blockTitle}>Livraison et retour</Text>
+                <TouchableOpacity>
+                  <Text style={styles.minify}>-</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.deliveryContainer}>
+                <Text style={styles.deliveryLabel}>Retrait en magasin</Text>
+                <Text style={styles.deliveryPrice}>GRATUIT</Text>
+                <Text style={styles.deliveryDelay}>Disponible en 4h</Text>
+              </View>
+              <View style={styles.deliveryContainer}>
+                <Text style={styles.deliveryLabel}>Retrait en magasin</Text>
+                <Text style={styles.deliveryPrice}>GRATUIT</Text>
+                <Text style={styles.deliveryDelay}>Disponible en 4h</Text>
+              </View>
+              <View style={styles.deliveryContainer}>
+                <Text style={styles.deliveryLabel}>Retrait en magasin</Text>
+                <Text style={styles.deliveryPrice}>GRATUIT</Text>
+                <Text style={styles.deliveryDelay}>Disponible en 4h</Text>
+              </View>
+              <View style={styles.line} />
+              <View style={styles.deliveryContainer}>
+                <Text style={styles.deliveryLabel}>Retrait en magasin</Text>
+                <Text style={styles.deliveryDelay}>Disponible en 4h</Text>
+              </View>
+              <View style={styles.deliveryContainer}>
+                <Text style={styles.deliveryLabel}>Retrait en magasin</Text>
+                <Text style={styles.deliveryDelay}>Disponible en 4h</Text>
               </View>
             </View>
             <View style={styles.otherArticles}>
-              <Text style={styles.infosHeaderText}>
-                Articles Complémentaire
-              </Text>
+              <Text style={styles.blockTitle}>Articles Complémentaires</Text>
               <OtherArticles navigation={navigation} />
             </View>
           </View>
@@ -205,32 +271,52 @@ ProductDetail.propTypes = {
   navigation: PropTypes.objectOf(PropTypes.shape).isRequired,
 }
 
+const blockContainer = {
+  backgroundColor: '#FFFFFF',
+  padding: 15,
+  marginVertical: 10,
+}
+const flexCenter = {
+  flexDirection: 'row',
+  alignItems: 'center',
+}
+
 const aspectRatio = 1
 const imageSizes = getImageSize(aspectRatio, 10)
 
 const styles = StyleSheet.create({
+  blockContainer: {
+    backgroundColor: '#FFFFFF',
+    padding: 15,
+    marginVertical: 10,
+  },
   container: {
-    marginHorizontal: 15,
-    marginVertical: 20,
+    paddingHorizontal: 15,
+    paddingVertical: 20,
+    backgroundColor: '#F7F7F7',
   },
   marque: {
     textTransform: 'uppercase',
-    fontSize: 18,
+    fontSize: 14,
     marginVertical: 10,
     fontWeight: 'bold',
+    color: '#242A48',
+    textDecorationLine: 'underline',
   },
   name: {
     fontSize: 18,
     marginVertical: 2,
+    color: '#242A48',
   },
   ref: {
-    fontSize: 16,
+    fontSize: 14,
     marginVertical: 2,
+    color: '#242A48',
   },
   price: {
     fontSize: 18,
-    fontWeight: 'bold',
     marginVertical: 10,
+    color: '#0364D9',
   },
   imageBackground: {
     marginVertical: 10,
@@ -253,13 +339,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   homeDelivery: {
-    flexDirection: 'row',
+    width: '100%',
+    backgroundColor: '#164194',
+    marginVertical: 10,
+    ...flexCenter,
     justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 20,
-    borderWidth: 1,
-    borderColor: 'grey',
-    paddingVertical: 5,
+    paddingVertical: 10,
+    borderRadius: 8,
+  },
+  homeDeliveryText: {
+    color: '#FFFFFF',
+    fontSize: 16,
   },
   iconOne: {
     width: 30,
@@ -270,40 +360,16 @@ const styles = StyleSheet.create({
     height: 23,
     marginHorizontal: 5,
   },
-  advicesHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginVertical: 5,
-  },
-  adviceContainer: {
-    backgroundColor: 'grey',
-    padding: 15,
-    marginVertical: 10,
-    borderTopWidth: 1,
-    borderColor: 'grey',
-  },
-  adviceHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    marginBottom: 5,
-  },
   seeMore: {
     width: '100%',
     marginVertical: 10,
-    flexDirection: 'row',
+    ...flexCenter,
     justifyContent: 'center',
-    alignItems: 'center',
   },
   seeMoreText: {
     textDecorationLine: 'underline',
-  },
-  infosContainer: {
-    borderTopWidth: 1,
-    borderBottomWidth: 1,
-    borderColor: 'grey',
-    paddingVertical: 20,
+    fontSize: 16,
+    color: '#164194',
   },
   infosHeader: {
     flexDirection: 'row',
@@ -315,34 +381,188 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
-  sizeList: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-  },
-  sizeButton: {
-    width: 60,
-    borderWidth: 1,
-    borderColor: 'grey',
-    borderRadius: 50,
-    margin: 5,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 8,
-  },
-  sizeGuide: {
-    marginVertical: 10,
-    textDecorationLine: 'underline',
-    fontSize: 14,
-  },
   underline: {
     textDecorationLine: 'underline',
     paddingVertical: 5,
   },
   otherArticles: {
     marginVertical: 20,
+  },
+  blockTitle: {
+    color: '#164194',
+    fontSize: 22,
+    fontWeight: '200',
+  },
+  minify: {
+    fontSize: 20,
+    color: '#164194',
+    fontWeight: 'bold',
+  },
+  line: {
+    height: 1,
+    width: '100%',
+    backgroundColor: '#EEEEEE',
+    marginVertical: 5,
+  },
+  blockHeader: {
+    ...flexCenter,
+    justifyContent: 'space-between',
+    marginVertical: 10,
+  },
+  advicesTitle: {
+    ...flexCenter,
+    justifyContent: 'flex-start',
+  },
+  advicesAverage: {
+    fontSize: 22,
+    color: '#164194',
+    marginHorizontal: 5,
+    fontWeight: 'bold',
+  },
+  adviceContainer: {
+    margin: 5,
+    borderBottomWidth: 1,
+    borderColor: '#EEEEEE',
+  },
+  adviceDate: {
+    fontSize: 12,
+    color: '#707070',
+    marginVertical: 5,
+  },
+  adviceHeader: {
+    ...flexCenter,
+    justifyContent: 'space-between',
+    marginVertical: 5,
+  },
+  adviceName: {
+    fontSize: 18,
+    color: '#242A48',
+    fontWeight: 'bold',
+  },
+  scoreCont: {
+    ...flexCenter,
+    justifyContent: 'flex-end',
+  },
+  score: {
+    color: '#164194',
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  adviceText: {
+    fontSize: 16,
+    color: '#242A48',
+    marginVertical: 10,
+  },
+  benefitsTitle: {
+    fontSize: 12,
+    color: '#707070',
+    marginTop: 10,
+  },
+  benefits: {
+    fontSize: 16,
+    color: '#707070',
+    marginVertical: 5,
+  },
+  consTitle: {
+    fontSize: 12,
+    color: '#707070',
+  },
+  cons: {
+    fontSize: 16,
+    color: '#707070',
+    marginVertical: 5,
+    paddingBottom: 10,
+  },
+  sizeList: {
+    ...flexCenter,
+    justifyContent: 'flex-start',
+    flexWrap: 'wrap',
+  },
+  sizeButtonActiv: {
+    width: 60,
+    borderRadius: 8,
+    margin: 5,
+    ...flexCenter,
+    justifyContent: 'center',
+    paddingVertical: 8,
+    color: '#FFFFFF',
+    backgroundColor: '#164194',
+  },
+  sizeButtonTextWhite: {
+    color: '#FFFFFF',
+  },
+  sizeButtonTextBlue: {
+    color: '#164194',
+  },
+  sizeButton: {
+    width: 60,
+    borderWidth: 1,
+    borderColor: '#164194',
+    borderRadius: 8,
+    margin: 5,
+    ...flexCenter,
+    justifyContent: 'center',
+    paddingVertical: 8,
+    color: '#164194',
+  },
+  sizeIndication: {
+    fontSize: 18,
+    color: '#164194',
+    marginVertical: 10,
+  },
+  sizeGuide: {
+    marginTop: 10,
+    marginBottom: 20,
+    ...flexCenter,
+    justifyContent: 'flex-start',
+  },
+  sizeGuideText: {
+    color: '#164194',
+    textDecorationLine: 'underline',
+  },
+  infosText: {
+    color: '#242A48',
+    fontSize: 16,
+    marginVertical: 5,
+  },
+  colorsTitle: {
+    fontSize: 16,
+    color: '#164194',
+    marginTop: 10,
+  },
+  colors: {
+    ...flexCenter,
+    justifyContent: 'flex-start',
+    marginTop: 20,
+  },
+  activColor: {
+    borderWidth: 1,
+    borderColor: '#174195',
+  },
+  color: {
+    borderWidth: 1,
+    borderColor: '#AEAEAE',
+    marginHorizontal: 10,
+  },
+  deliveryContainer: {
+    marginHorizontal: 5,
+    marginVertical: 8,
+  },
+  deliveryLabel: {
+    fontSize: 16,
+    marginVertical: 2,
+    color: '#242A48',
+    fontWeight: 'bold',
+  },
+  deliveryPrice: {
+    fontSize: 16,
+    marginVertical: 2,
+    color: '#0364D9',
+  },
+  deliveryDelay: {
+    fontSize: 16,
+    marginVertical: 2,
+    color: '#242A48',
   },
 })
 

@@ -42,6 +42,7 @@ const CartStack = createStackNavigator(
   {
     initialRouteName: 'Recap',
     mode: 'modal',
+    headerMode: 'none',
   }
 )
 

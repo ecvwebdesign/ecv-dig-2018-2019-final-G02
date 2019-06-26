@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   StyleSheet,
   View,
@@ -8,7 +8,6 @@ import {
   Image,
 } from 'react-native'
 import PropTypes from 'prop-types'
-import CustomImage from '../../../commons/components/CustomImage'
 import getImageSize from '../../../commons/utils/images'
 
 const aspectRatio = 150 / 150
@@ -35,9 +34,11 @@ const OtherArticles = ({ navigation }) => {
                 style={styles.productImage}
               />
               <View style={styles.textContainer}>
-                <Text>MARQUE</Text>
-                <Text>Nom du produit</Text>
-                <Text>30</Text>
+                <Text style={styles.marque}>NIKE</Text>
+                <Text style={styles.name}>
+                  T-shirt manches longues femme FFF W Tee Travel
+                </Text>
+                <Text style={styles.price}>21.99 €</Text>
               </View>
             </View>
           </TouchableOpacity>
@@ -53,9 +54,11 @@ const OtherArticles = ({ navigation }) => {
                 style={styles.productImage}
               />
               <View style={styles.textContainer}>
-                <Text>MARQUE</Text>
-                <Text>Nom du produit</Text>
-                <Text>30</Text>
+                <Text style={styles.marque}>NIKE</Text>
+                <Text style={styles.name}>
+                  T-shirt manches longues femme FFF W Tee Travel
+                </Text>
+                <Text style={styles.price}>21.99 €</Text>
               </View>
             </View>
           </TouchableOpacity>
@@ -74,9 +77,9 @@ const OtherArticles = ({ navigation }) => {
                 style={styles.productImage}
               />
               <View style={styles.textContainer}>
-                <Text>MARQUE</Text>
-                <Text>Nom du produit</Text>
-                <Text>30</Text>
+                <Text style={styles.marque}>ENERGETICS</Text>
+                <Text style={styles.name}>Short de training femme Leila</Text>
+                <Text style={styles.price}>31.99 €</Text>
               </View>
             </View>
           </TouchableOpacity>
@@ -93,6 +96,25 @@ OtherArticles.propTypes = {
 const styles = StyleSheet.create({
   container: {
     marginVertical: 20,
+    backgroundColor: '#F7F7F7',
+  },
+  marque: {
+    textTransform: 'uppercase',
+    fontSize: 14,
+    marginVertical: 10,
+    fontWeight: 'bold',
+    color: '#242A48',
+    textDecorationLine: 'underline',
+  },
+  name: {
+    fontSize: 18,
+    marginVertical: 2,
+    color: '#242A48',
+  },
+  price: {
+    fontSize: 18,
+    marginVertical: 10,
+    color: '#0364D9',
   },
   productContainer: {
     width: imageSizes.width / 2,

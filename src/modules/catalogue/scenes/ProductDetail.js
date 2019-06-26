@@ -221,6 +221,11 @@ const flexCenter = {
 }
 
 const styles = StyleSheet.create({
+  blockContainer: {
+    backgroundColor: '#FFFFFF',
+    padding: 15,
+    marginVertical: 10,
+  },
   container: {
     paddingHorizontal: 15,
     paddingVertical: 5,
