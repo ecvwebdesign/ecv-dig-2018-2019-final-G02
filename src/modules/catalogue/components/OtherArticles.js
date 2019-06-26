@@ -117,11 +117,12 @@ const styles = StyleSheet.create({
     color: '#0364D9',
   },
   productContainer: {
-    width: imageSizes.width / 2,
+    width: imageSizes.width / 2 + 20,
+    marginRight: 10,
   },
   productImage: {
-    width: imageSizes.width / 2 - 40,
-    height: imageSizes.width / 2 - 40,
+    width: imageSizes.width / 2 - 20,
+    height: imageSizes.width / 2 - 20,
   },
   productButton: {
     padding: 5,

@@ -27,24 +27,33 @@ const Recap = ({ navigation }) => {
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.headerItem}>
-            <TouchableOpacity style={styles.headerActivButton}>
+            <TouchableOpacity
+              style={styles.headerActivButton}
+              onPress={() => navigation.navigate('Recap')}
+            >
               <Text style={styles.headerActivNumber}>1</Text>
             </TouchableOpacity>
             <Text style={styles.headerActivText}>Votre commande</Text>
           </View>
           <View style={styles.headerLine} />
           <View style={styles.headerItem}>
-            <TouchableOpacity style={styles.headerInactivButton}>
+            <TouchableOpacity
+              style={styles.headerInactivButton}
+              onPress={() => navigation.navigate('InqueriesInfos')}
+            >
               <Text style={styles.headerInactivNumber}>2</Text>
             </TouchableOpacity>
-            <Text style={styles.headerInactivText}>Votre commande</Text>
+            <Text style={styles.headerInactivText}>Votre information</Text>
           </View>
           <View style={styles.headerLine} />
           <View style={styles.headerItem}>
-            <TouchableOpacity style={styles.headerInactivButton}>
+            <TouchableOpacity
+              style={styles.headerInactivButton}
+              onPress={() => navigation.navigate('Paiement')}
+            >
               <Text style={styles.headerInactivNumber}>3</Text>
             </TouchableOpacity>
-            <Text style={styles.headerInactivText}>Votre commande</Text>
+            <Text style={styles.headerInactivText}>Paiement sécurisé</Text>
           </View>
         </View>
         <View style={styles.line} />
@@ -209,8 +218,6 @@ const Recap = ({ navigation }) => {
             </View>
             <View style={styles.colEnd}>
               <Text style={styles.totalPrice}>208.97 €</Text>
-            </View>
-            <View style={styles.colEnd}>
               <Text style={styles.savings}>Economie réalisée : 26,00 €</Text>
             </View>
           </View>
@@ -260,8 +267,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   container: {
-    paddingHorizontal: 15,
-    paddingVertical: 10,
+    padding: 15,
     backgroundColor: '#F7F7F7',
   },
   header: {
