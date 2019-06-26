@@ -116,7 +116,7 @@ const Paiement = ({ navigation }) => {
                   style={styles.input}
                   onChangeText={onCardChange}
                   value={card}
-                  placeholder="Numéro de cart"
+                  placeholder="Numéro de carte"
                   maxLength={256}
                 />
               </View>
@@ -125,14 +125,14 @@ const Paiement = ({ navigation }) => {
                   style={styles.inputHalf}
                   onChangeText={onYearChange}
                   value={year}
-                  placeholder="Numéro de carte"
+                  placeholder="MM/AA"
                   maxLength={256}
                 />
                 <TextInput
                   style={styles.inputHalf}
                   onChangeText={onCVVChange}
                   value={cvv}
-                  placeholder="Numéro de cart"
+                  placeholder="CVV"
                   maxLength={256}
                 />
               </View>
@@ -143,7 +143,7 @@ const Paiement = ({ navigation }) => {
             </View>
             <TouchableOpacity
               style={styles.nextButton}
-              onPress={() => navigation.navigate('Paiment')}
+              onPress={() => navigation.navigate('CartValidation')}
             >
               <Text style={styles.nextText}>Valider le paiement</Text>
             </TouchableOpacity>
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     marginTop: 10,
     color: '#164194',
-    fontWeight: '300',
+    fontWeight: '200',
   },
   container: {
     padding: 15,
@@ -279,6 +279,7 @@ const styles = StyleSheet.create({
   },
   iconButton: {
     width: 180,
+    height: 40,
     paddingHorizontal: 10,
     backgroundColor: '#0364D9',
     borderRadius: 8,
@@ -316,30 +317,12 @@ const styles = StyleSheet.create({
   },
   cardContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
     borderWidth: 1,
     borderColor: '#AEAEAE',
     marginVertical: 20,
     paddingHorizontal: 10,
     borderRadius: 3,
-  },
-  checkContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginVertical: 10,
-  },
-  check: {
-    width: 20,
-    height: 20,
-    borderWidth: 1,
-    borderColor: '#242A48',
-    borderRadius: 3,
-  },
-  checkText: {
-    color: '#242A48',
-    fontSize: 12,
-    marginVertical: 5,
   },
   inputHalf: {
     borderWidth: 1,
@@ -365,6 +348,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 20,
+  },
+  checkContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+  check: {
+    width: 20,
+    height: 20,
+    borderWidth: 1,
+    borderColor: '#242A48',
+    borderRadius: 3,
+  },
+  checkText: {
+    color: '#242A48',
+    fontSize: 12,
+    marginHorizontal: 5,
   },
   nextText: {
     color: '#FFFFFF',

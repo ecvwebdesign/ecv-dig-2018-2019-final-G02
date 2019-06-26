@@ -20,6 +20,7 @@ import ProductAdvice from '../modules/catalogue/scenes/ProductAdvice'
 import Recap from '../modules/cart/scenes/Recap'
 import InqueriesInfos from '../modules/cart/scenes/InqueriesInfos'
 import Paiement from '../modules/cart/scenes/Paiement'
+import CartValidation from '../modules/cart/scenes/CartValidation'
 import Header from '../commons/components/Header'
 
 const AccountStack = createStackNavigator(
@@ -36,8 +37,6 @@ const AccountStack = createStackNavigator(
 const CartStack = createStackNavigator(
   {
     Recap: { screen: Recap },
-    InqueriesInfos: { screen: InqueriesInfos },
-    Paiement: { screen: Paiement },
   },
   {
     initialRouteName: 'Recap',
@@ -48,11 +47,7 @@ const CartStack = createStackNavigator(
 
 CartStack.navigationOptions = ({ navigation }) => {
   let tabBarVisible = true
-  if (
-    getActiveRouteState(navigation.state).routeName === 'Recap'
-    || getActiveRouteState(navigation.state).routeName === 'InqueriesInfos'
-    || getActiveRouteState(navigation.state).routeName === 'Paiement'
-  ) {
+  if (getActiveRouteState(navigation.state).routeName === 'Recap') {
     tabBarVisible = false
   }
 
@@ -212,6 +207,9 @@ const RootStack = createStackNavigator(
         header: null,
       },
     },
+    InqueriesInfos: { screen: InqueriesInfos },
+    Paiement: { screen: Paiement },
+    CartValidation: { screen: CartValidation },
   },
   {
     initialRouteName: 'BottomTab',
