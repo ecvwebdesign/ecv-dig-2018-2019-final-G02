@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 15,
     paddingVertical: 20,
-    backgroundColor: '#F7F7F7',
+    backgroundColor: '#FFFFFF',
   },
   header: {
     flexDirection: 'row',
@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 32,
     marginBottom: 30,
+    color: '#164194',
   },
   categorieContainer: {
     flexDirection: 'row',
