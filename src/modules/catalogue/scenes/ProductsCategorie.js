@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import {
-  StyleSheet, View, Text, TouchableOpacity, ScrollView,
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  Image,
 } from 'react-native'
 import PropTypes from 'prop-types'
 import ProductsList from '../components/ProductsList'
@@ -26,12 +31,23 @@ const ProductsCategorie = ({ navigation }) => {
     )
   }
   return (
-    <View>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Text>{'<'}</Text>
-      </TouchableOpacity>
-      <ScrollView>
-        <Text style={styles.title}>Ventes Privées</Text>
+    <ScrollView>
+      <View style={styles.container}>
+        <View>
+          <TouchableOpacity
+            style={{ flexDirection: 'row', alignItems: 'center' }}
+            onPress={() => navigation.goBack()}
+          >
+            <Image
+              style={{ width: 5, height: 8 }}
+              source={require('../../../commons/assets/images/gauche.png')}
+            />
+            <Text style={{ color: '#242A48', marginHorizontal: 5 }}>
+              Retour
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <Text style={styles.title}>Homme</Text>
         <View style={styles.categorieContainer}>
           <View style={styles.halfContainerLeft}>
             <TouchableOpacity style={styles.buttonWrapper} onPress={openModal}>
@@ -45,17 +61,21 @@ const ProductsCategorie = ({ navigation }) => {
           </View>
         </View>
         <ProductsList navigation={navigation} products={products} />
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   )
 }
-
 
 ProductsCategorie.propTypes = {
   navigation: PropTypes.objectOf(PropTypes.shape).isRequired,
 }
 
 const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 15,
+    paddingVertical: 20,
+    backgroundColor: '#F7F7F7',
+  },
   header: {
     flexDirection: 'row',
     justifyContent: 'flex-end',

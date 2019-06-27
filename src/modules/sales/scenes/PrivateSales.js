@@ -1,56 +1,47 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
-  StyleSheet, View, Text, TouchableOpacity, ScrollView,
+  StyleSheet, View, ScrollView, Image,
 } from 'react-native'
 import PropTypes from 'prop-types'
-import ProductsList from '../../catalogue/components/ProductsList'
-import products from '../../../commons/utils/fakeData.json'
+import Carousel from 'react-native-snap-carousel'
+import SliderComponent from '../components/SliderComponent'
 
-const PrivateSales = ({ navigation }) => {
-  const [modalOpened, setModalOpened] = useState(false)
+const ENTRIES1 = [
+  {
+    path: "require('../../../commons/assets/images/slide1.jpg')",
+  },
+  {
+    path: "require('../../../commons/assets/images/slide1.jpg')",
+  },
+  {
+    path: "require('../../../commons/assets/images/slide1.jpg')",
+  },
+]
 
-  const openModal = () => {
-    setModalOpened(!modalOpened)
-  }
-
-  if (modalOpened) {
-    return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.headerText}>Filtres</Text>
-          <TouchableOpacity onPress={openModal}>
-            <Text>X</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    )
-  }
-  return (
-    <View>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Text>{'<'}</Text>
-      </TouchableOpacity>
-      <ScrollView>
-        <Text style={styles.title}>Ventes Privées</Text>
-        <Text>Description</Text>
-        <View style={styles.categorieContainer}>
-          <View style={styles.halfContainerLeft}>
-            <TouchableOpacity style={styles.buttonWrapper} onPress={openModal}>
-              <Text>filtres</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.halfContainerRight}>
-            <TouchableOpacity style={styles.buttonWrapper} onPress={openModal}>
-              <Text>tri</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <ProductsList navigation={navigation} products={products} />
-      </ScrollView>
-    </View>
-  )
-}
-
+const PrivateSales = ({ navigation }) => (
+  <View
+    style={{
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100%',
+      width: '100%',
+      marginTop: 50,
+      marginLeft: 40,
+    }}
+  >
+    <Carousel
+      data={ENTRIES1}
+      renderItem={SliderComponent}
+      sliderWidth={280}
+      itemWidth={280}
+      containerCustomStyle={styles.slider}
+      contentContainerCustomStyle={styles.sliderContentContainer}
+      layout="tinder"
+      loop={false}
+    />
+  </View>
+)
 
 PrivateSales.propTypes = {
   navigation: PropTypes.objectOf(PropTypes.shape).isRequired,

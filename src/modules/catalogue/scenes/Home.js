@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
+  ImageBackground,
 } from 'react-native'
 import PropTypes from 'prop-types'
 
@@ -66,8 +67,14 @@ const Home = ({ navigation }) => {
         </View>
         <View style={styles.categorieContainer}>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity onPress={() => navigation.navigate('Sales')}>
-              <Text>Ventes Privées</Text>
+            <TouchableOpacity
+              style={{ width: '100%', height: '100%' }}
+              onPress={() => navigation.navigate('Sales')}
+            >
+              <Image
+                style={{ width: '100%', height: '100%' }}
+                source={require('../../../commons/assets/images/promo.jpg')}
+              />
             </TouchableOpacity>
           </View>
         </View>
@@ -95,7 +102,12 @@ const Home = ({ navigation }) => {
               style={styles.categorie}
               onPress={() => navigation.navigate('ProductsCategorie')}
             >
-              <View style={styles.fakeImage} />
+              <View style={styles.fakeImage}>
+                <Image
+                  style={{ width: '100%', height: '100%' }}
+                  source={require('../../../commons/assets/images/femme.jpg')}
+                />
+              </View>
               <View style={styles.half}>
                 <Text style={styles.categorieName}>Femme</Text>
                 <TouchableOpacity style={styles.subCategorie}>
@@ -122,7 +134,12 @@ const Home = ({ navigation }) => {
               style={styles.categorie}
               onPress={() => navigation.navigate('ProductsCategorie')}
             >
-              <View style={styles.fakeImage} />
+              <View style={styles.fakeImage}>
+                <Image
+                  style={{ width: '100%', height: '100%' }}
+                  source={require('../../../commons/assets/images/homme.jpg')}
+                />
+              </View>
               <View style={styles.half}>
                 <Text style={styles.categorieName}>Homme</Text>
                 <TouchableOpacity style={styles.subCategorie}>
@@ -149,7 +166,12 @@ const Home = ({ navigation }) => {
               style={styles.categorie}
               onPress={() => navigation.navigate('ProductsCategorie')}
             >
-              <View style={styles.fakeImage} />
+              <View style={styles.fakeImage}>
+                <Image
+                  style={{ width: '100%', height: '100%' }}
+                  source={require('../../../commons/assets/images/enfant.jpg')}
+                />
+              </View>
               <View style={styles.half}>
                 <Text style={styles.categorieName}>Enfant</Text>
                 <TouchableOpacity style={styles.subCategorie}>
@@ -173,18 +195,15 @@ const Home = ({ navigation }) => {
         <View style={styles.categorieContainer}>
           <View style={styles.buttonContainer}>
             <TouchableOpacity
+              style={{ width: '100%', height: '100%' }}
               onPress={() => navigation.navigate('ProductsCategorie')}
             >
-              <Text style={styles.categorieText}>Vélos, VTT, VTC</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.categorieContainer}>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity
-              onPress={() => navigation.navigate('ProductsCategorie')}
-            >
-              <Text style={styles.categorieText}>Matériels volumineux</Text>
+              <ImageBackground
+                style={styles.imageBackground}
+                source={require('../../../commons/assets/images/velo.jpg')}
+              >
+                <Text style={styles.categorieText}>Vélos, VTT, VTC</Text>
+              </ImageBackground>
             </TouchableOpacity>
           </View>
         </View>
@@ -209,6 +228,14 @@ Home.propTypes = {
 }
 
 const styles = StyleSheet.create({
+  imageBackground: {
+    marginVertical: 10,
+    width: '100%',
+    height: 110,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   container: {
     marginHorizontal: 15,
     marginVertical: 10,
@@ -235,8 +262,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#000000',
+    borderRadius: 8,
     marginVertical: 20,
     paddingHorizontal: 10,
     backgroundColor: '#F7F7F7',

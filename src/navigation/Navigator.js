@@ -10,7 +10,7 @@ import Login from '../modules/authentification/scenes/Login'
 import Signup from '../modules/authentification/scenes/Signup'
 import Home from '../modules/catalogue/scenes/Home'
 import ProductsCategorie from '../modules/catalogue/scenes/ProductsCategorie'
-import PrivateSales from '../modules/catalogue/scenes/PrivateSales'
+import PrivateSales from '../modules/sales/scenes/PrivateSales'
 import ProductDetail from '../modules/catalogue/scenes/ProductDetail'
 import Informations from '../modules/account/scenes/Informations'
 import Bookmarks from '../modules/bookmarks/scenes/Bookmarks'
@@ -37,6 +37,9 @@ const AccountStack = createStackNavigator(
 const CartStack = createStackNavigator(
   {
     Recap: { screen: Recap },
+    InqueriesInfos: { screen: InqueriesInfos },
+    Paiement: { screen: Paiement },
+    CartValidation: { screen: CartValidation },
   },
   {
     initialRouteName: 'Recap',
@@ -47,7 +50,11 @@ const CartStack = createStackNavigator(
 
 CartStack.navigationOptions = ({ navigation }) => {
   let tabBarVisible = true
-  if (getActiveRouteState(navigation.state).routeName === 'Recap') {
+  if (
+    getActiveRouteState(navigation.state).routeName === 'Recap'
+    || getActiveRouteState(navigation.state).routeName === 'InqueriesInfos'
+    || getActiveRouteState(navigation.state).routeName === 'Paiement'
+  ) {
     tabBarVisible = false
   }
 
@@ -207,9 +214,6 @@ const RootStack = createStackNavigator(
         header: null,
       },
     },
-    InqueriesInfos: { screen: InqueriesInfos },
-    Paiement: { screen: Paiement },
-    CartValidation: { screen: CartValidation },
   },
   {
     initialRouteName: 'BottomTab',

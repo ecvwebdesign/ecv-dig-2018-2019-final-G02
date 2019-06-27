@@ -35,8 +35,17 @@ const ProductDetail = ({ navigation }) => {
         {product ? (
           <View>
             <View>
-              <TouchableOpacity onPress={() => navigation.goBack()}>
-                <Text>←</Text>
+              <TouchableOpacity
+                style={{ flexDirection: 'row', alignItems: 'center' }}
+                onPress={() => navigation.goBack()}
+              >
+                <Image
+                  style={{ width: 5, height: 8 }}
+                  source={require('../../../commons/assets/images/gauche.png')}
+                />
+                <Text style={{ color: '#242A48', marginHorizontal: 5 }}>
+                  Retour
+                </Text>
               </TouchableOpacity>
             </View>
             <Text style={styles.marque}>{product.marque}</Text>
@@ -131,10 +140,6 @@ const ProductDetail = ({ navigation }) => {
             <View style={styles.supplyContainer}>
               <View style={styles.supplyContent}>
                 <View style={styles.supplyValidation}>
-                  <Image
-                    style={{ width: 18, height: 16 }}
-                    source={require('../../../commons/assets/images/home.png')}
-                  />
                   <Text style={styles.supplyValidate}>En Stock</Text>
                 </View>
                 <Text style={styles.supplyWarning}>Plus que 3 produits</Text>
@@ -152,7 +157,10 @@ const ProductDetail = ({ navigation }) => {
               <Text style={styles.marketText}>Réserver en magasin :</Text>
               <View style={styles.bookProduct}>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                  {/* <Image /> */}
+                  <Image
+                    style={{ width: 18, height: 16 }}
+                    source={require('../../../commons/assets/images/magasin.png')}
+                  />
                   <Text style={styles.supplyWarning}>Indisponible</Text>
                 </View>
                 <Text style={styles.free}>Gratuit</Text>
@@ -163,8 +171,8 @@ const ProductDetail = ({ navigation }) => {
               <View style={styles.bookProduct}>
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                   <Image
-                    style={{ width: 16, height: 19 }}
-                    source={require('../../../commons/assets/images/cart.png')}
+                    style={{ width: 16, height: 19, marginHorizontal: 5 }}
+                    source={require('../../../commons/assets/images/panier_vide.png')}
                   />
                   <Text style={styles.supplyValidate}>Disponible</Text>
                 </View>
@@ -176,7 +184,7 @@ const ProductDetail = ({ navigation }) => {
               <View style={styles.deliveryProduct}>
                 <Image
                   style={{ width: 16, height: 20 }}
-                  source={require('../../../commons/assets/images/cart.png')}
+                  source={require('../../../commons/assets/images/localisation-border.png')}
                 />
                 <View style={styles.deliveryInfos}>
                   <Text style={styles.deliveryText}>
@@ -193,7 +201,7 @@ const ProductDetail = ({ navigation }) => {
               <View style={styles.deliveryProduct}>
                 <Image
                   style={{ width: 16, height: 20 }}
-                  source={require('../../../commons/assets/images/cart.png')}
+                  source={require('../../../commons/assets/images/localisation-border.png')}
                 />
                 <View style={styles.deliveryInfos}>
                   <Text style={styles.deliveryText}>
@@ -239,7 +247,7 @@ const styles = StyleSheet.create({
   },
   container: {
     paddingHorizontal: 15,
-    paddingVertical: 5,
+    paddingVertical: 20,
     backgroundColor: '#F7F7F7',
   },
   marque: {

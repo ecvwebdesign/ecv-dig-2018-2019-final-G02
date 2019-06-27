@@ -101,7 +101,7 @@ const Paiement = ({ navigation }) => {
               >
                 <TouchableOpacity style={styles.iconButton}>
                   <Image
-                    style={{ width: 13, height: 11 }}
+                    style={{ width: 14, height: 11 }}
                     source={require('../../../commons/assets/images/camera.png')}
                   />
                   <Text style={styles.iconText}>Scanner la carte</Text>
@@ -109,8 +109,8 @@ const Paiement = ({ navigation }) => {
               </ImageBackground>
               <View style={styles.cardContainer}>
                 <Image
-                  style={{ width: 15, height: 15 }}
-                  source={require('../../../commons/assets/images/search-icon.png')}
+                  style={{ width: 10, height: 13, marginHorizontal: 5 }}
+                  source={require('../../../commons/assets/images/cadena.png')}
                 />
                 <TextInput
                   style={styles.input}
@@ -140,6 +140,18 @@ const Paiement = ({ navigation }) => {
                 <View style={styles.check} />
                 <Text style={styles.checkText}>Enregistrer la carte</Text>
               </View>
+            </View>
+
+            <View style={{ paddingHorizontal: 15, flexDirection: 'row' }}>
+              <Image
+                style={{ width: 10, height: 13, marginHorizontal: 5 }}
+                source={require('../../../commons/assets/images/cadena.png')}
+              />
+              <Text>
+                Les informations que vous nous transmettez sur cette page sont
+                cryptées, vous pouvez saisir vos données bancaires en toute
+                sécurité.
+              </Text>
             </View>
             <TouchableOpacity
               style={styles.nextButton}

@@ -25,7 +25,7 @@ const Header = (props) => {
         >
           <Image
             style={{ width: 12, height: 16, marginHorizontal: 5 }}
-            source={require('../assets/images/localisation.png')}
+            source={require('../assets/images/localisation-border.png')}
           />
           <View>
             <Text

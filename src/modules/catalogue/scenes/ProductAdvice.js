@@ -36,8 +36,17 @@ const ProductDetail = ({ navigation }) => {
         {product ? (
           <View>
             <View>
-              <TouchableOpacity onPress={() => navigation.goBack()}>
-                <Text>←</Text>
+              <TouchableOpacity
+                style={{ flexDirection: 'row', alignItems: 'center' }}
+                onPress={() => navigation.goBack()}
+              >
+                <Image
+                  style={{ width: 5, height: 8 }}
+                  source={require('../../../commons/assets/images/gauche.png')}
+                />
+                <Text style={{ color: '#242A48', marginHorizontal: 5 }}>
+                  Retour
+                </Text>
               </TouchableOpacity>
             </View>
             <Text style={styles.marque}>{product.marque}</Text>
@@ -61,8 +70,8 @@ const ProductDetail = ({ navigation }) => {
             </View>
             <TouchableOpacity style={styles.homeDelivery}>
               <Image
-                style={styles.iconTwo}
-                source={require('../../../commons/assets/images/cart.png')}
+                style={{ width: 18, height: 14, marginHorizontal: 5 }}
+                source={require('../../../commons/assets/images/livraison_domicile.png')}
               />
               <Text style={styles.homeDeliveryText}>
                 Me faire livrer chez moi
@@ -84,8 +93,8 @@ const ProductDetail = ({ navigation }) => {
                   <Text style={styles.adviceName}>Name Surname</Text>
                   <View style={styles.scoreCont}>
                     <Image
-                      style={{ width: 15, height: 15 }}
-                      source={require('../../../commons/assets/images/like.png')}
+                      style={{ width: 15, height: 15, marginHorizontal: 5 }}
+                      source={require('../../../commons/assets/images/good.png')}
                     />
                     <Text style={styles.score}>Satisfait</Text>
                   </View>
@@ -105,8 +114,8 @@ const ProductDetail = ({ navigation }) => {
                   <Text style={styles.adviceName}>Name Surname</Text>
                   <View style={styles.scoreCont}>
                     <Image
-                      style={{ width: 15, height: 15 }}
-                      source={require('../../../commons/assets/images/like.png')}
+                      style={{ width: 15, height: 15, marginHorizontal: 5 }}
+                      source={require('../../../commons/assets/images/good.png')}
                     />
                     <Text style={styles.score}>Satisfait</Text>
                   </View>
@@ -126,15 +135,19 @@ const ProductDetail = ({ navigation }) => {
                   <Text style={styles.adviceName}>Name Surname</Text>
                   <View style={styles.scoreCont}>
                     <Image
-                      style={{ width: 15, height: 15 }}
-                      source={require('../../../commons/assets/images/like.png')}
+                      style={{ width: 15, height: 15, marginHorizontal: 5 }}
+                      source={require('../../../commons/assets/images/angry.png')}
                     />
-                    <Text style={styles.score}>Satisfait</Text>
+                    <Text style={styles.score}>Horrible</Text>
                   </View>
                 </View>
                 <Text style={styles.adviceText}>
-                  Joli maillot. Produit bien fini, agréable à porter et qui fait
-                  son effet.
+                  J’ai commandé le maillot pour une amie en fonction du guide
+                  des taille proposé, celle-ci ne pouvait pas le mettre j’ai
+                  donc demandé l’échange contre une taille XL directement en
+                  magasin ce à quoi on m’a répondu « personne ne met du XL on en
+                  commande jamais » et « il faut être moins gros » or ce n’est
+                  pas un problème de poids mais de poitrine.
                 </Text>
                 <Text style={styles.benefitsTitle}>+ Points forts</Text>
                 <Text style={styles.benefits}>Agréables à porter</Text>

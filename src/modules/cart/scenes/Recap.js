@@ -69,7 +69,10 @@ const Recap = ({ navigation }) => {
               <Text style={styles.price}>54 €</Text>
             </View>
             <TouchableOpacity>
-              <Text style={styles.cross}>x</Text>
+              <Image
+                style={{ width: 13, height: 13 }}
+                source={require('../../../commons/assets/images/croix.png')}
+              />
             </TouchableOpacity>
           </View>
           <View>
@@ -96,7 +99,11 @@ const Recap = ({ navigation }) => {
             </View>
             <View style={styles.productAction}>
               <View style={styles.quantity}>
-                <Text style={styles.quantityText}>Qté. 2 +</Text>
+                <Text style={styles.quantityText}>Qté. 2</Text>
+                <Image
+                  style={{ width: 12, height: 7, marginHorizontal: 5 }}
+                  source={require('../../../commons/assets/images/bas.png')}
+                />
               </View>
               <TouchableOpacity style={styles.favButton}>
                 <Image
@@ -118,7 +125,10 @@ const Recap = ({ navigation }) => {
               <Text style={styles.price}>54 €</Text>
             </View>
             <TouchableOpacity>
-              <Text style={styles.cross}>x</Text>
+              <Image
+                style={{ width: 13, height: 13 }}
+                source={require('../../../commons/assets/images/croix.png')}
+              />
             </TouchableOpacity>
           </View>
           <View>
@@ -145,7 +155,11 @@ const Recap = ({ navigation }) => {
             </View>
             <View style={styles.productAction}>
               <View style={styles.quantity}>
-                <Text style={styles.quantityText}>Qté. 2 +</Text>
+                <Text style={styles.quantityText}>Qté. 2</Text>
+                <Image
+                  style={{ width: 12, height: 7, marginHorizontal: 5 }}
+                  source={require('../../../commons/assets/images/bas.png')}
+                />
               </View>
               <TouchableOpacity style={styles.favButton}>
                 <Image
@@ -232,7 +246,7 @@ const Recap = ({ navigation }) => {
         </View>
       </View>
       <View style={styles.otherArticles}>
-        <Text style={styles.infosHeaderText}>Compléter avec vos favoris</Text>
+        <Text style={styles.blockTitle}>Compléter avec vos favoris</Text>
         <OtherArticles navigation={navigation} />
       </View>
     </ScrollView>
@@ -399,6 +413,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#174195',
     borderRadius: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   quantityText: {
     color: '#174195',

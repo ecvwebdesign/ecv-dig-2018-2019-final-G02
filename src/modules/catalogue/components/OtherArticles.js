@@ -35,9 +35,7 @@ const OtherArticles = ({ navigation }) => {
               />
               <View style={styles.textContainer}>
                 <Text style={styles.marque}>NIKE</Text>
-                <Text style={styles.name}>
-                  T-shirt manches longues femme FFF W Tee Travel
-                </Text>
+                <Text style={styles.name}>Vélo VTT</Text>
                 <Text style={styles.price}>21.99 €</Text>
               </View>
             </View>
@@ -55,9 +53,7 @@ const OtherArticles = ({ navigation }) => {
               />
               <View style={styles.textContainer}>
                 <Text style={styles.marque}>NIKE</Text>
-                <Text style={styles.name}>
-                  T-shirt manches longues femme FFF W Tee Travel
-                </Text>
+                <Text style={styles.name}>Vélo VTT</Text>
                 <Text style={styles.price}>21.99 €</Text>
               </View>
             </View>
@@ -70,10 +66,7 @@ const OtherArticles = ({ navigation }) => {
           >
             <View>
               <Image
-                source={{
-                  uri:
-                    'https://media.intersport.fr/is/image/intersportfr/Y8SUQ3_29K_PR?$produit_l$',
-                }}
+                source={require('../../../commons/assets/images/short.png')}
                 style={styles.productImage}
               />
               <View style={styles.textContainer}>
